@@ -140,19 +140,29 @@ def copy_non_markdown_files() -> None:
             shutil.copy2(source_file, output_path)
 
 def build_index(pages: List[Tuple[str, Path]]) -> None:
-    items = []
-    for title, rel_html in pages:
-        href = rel_html.as_posix()
-        items.append(f"<li><a href=\"{href}\">{title}</a></li>")
+    # Check if there's a custom index.md file
+    custom_index = SOURCE_DIR / "index.md"
+    if custom_index.exists():
+        # Use the custom index.md file
+        md_text = read_markdown(custom_index)
+        body_html = convert_markdown(md_text)
+        index_html = wrap_html("Enterprise Technology Governance Framework", "index.html", body_html)
+        INDEX_PATH.write_text(index_html, encoding="utf-8")
+    else:
+        # Fall back to auto-generated index
+        items = []
+        for title, rel_html in pages:
+            href = rel_html.as_posix()
+            items.append(f"<li><a href=\"{href}\">{title}</a></li>")
 
-    page_list = "\n        ".join(items)
-    body_html = f"""<h1>Documentation Index</h1>
+        page_list = "\n        ".join(items)
+        body_html = f"""<h1>Documentation Index</h1>
 <ul class=\"page-list\">
         {page_list}
 </ul>
 """
-    index_html = wrap_html("Documentation Index", "index.html", body_html)
-    INDEX_PATH.write_text(index_html, encoding="utf-8")
+        index_html = wrap_html("Documentation Index", "index.html", body_html)
+        INDEX_PATH.write_text(index_html, encoding="utf-8")
 
 def main() -> None:
     ensure_source_dir()
