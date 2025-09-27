@@ -23,6 +23,9 @@ Safeguard the City's identity services by governing domain membership, account p
 - CAB participation: Active Directory provides identity and access management expertise to CAB for requests involving directory services or authentication changes.
 - Required SME sign-offs: Active Directory provides recommendations and evidence for CAB decisions; teams may not self-approve every step.
 - Separation of duties: Active Directory cannot approve their own requests; independent validation required from other teams.
+- Artifact stewardship: Active Directory consumes and maintains data classification matrix, accessibility/privacy checklist, and minimum logging profile for identity operations.
+- Risk scoring participation: Active Directory participates in qualitative risk assessment and provides identity risk context for risk scoring.
+- RACI table participation: Active Directory serves as Responsible party for identity assessments and Accountable for directory design decisions.
 
 4. Collaboration Touchpoints
 ----------------------------
@@ -46,4 +49,6 @@ Safeguard the City's identity services by governing domain membership, account p
 - Automate repetitive provisioning steps and integrate approvals with the request system where feasible.
 - Track service-level targets for account provisioning, domain join turnarounds, logging coverage, and report to the CAB.
 - Host quarterly knowledge sessions with stakeholder teams to explain standards, changes, audit results, logging mandates, and lifecycle review findings.
+- Maintain data classification matrix, accessibility/privacy checklist, and minimum logging profile for identity operations.
+- Feed metrics to the CAB and participate in annual framework refresh and artifact maintenance.
 - Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.

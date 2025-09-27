@@ -22,6 +22,9 @@ Design, secure, and operate the City's network infrastructure to provide reliabl
 - CAB participation: Network provides connectivity assessments and security impact analysis to CAB for network-related requests.
 - Required SME sign-offs: Network provides recommendations and evidence for CAB decisions; teams may not self-approve every step.
 - Separation of duties: Network cannot approve their own requests; independent validation required from other teams.
+- Artifact stewardship: Network consumes and maintains minimum logging profile, service tiering playbook, and cloud shared-responsibility matrix for network operations.
+- Risk scoring participation: Network participates in qualitative risk assessment and provides connectivity risk context for risk scoring.
+- RACI table participation: Network serves as Responsible party for connectivity assessments and Accountable for network design decisions.
 
 4. Collaboration Touchpoints
 ----------------------------
@@ -45,4 +48,6 @@ Design, secure, and operate the City's network infrastructure to provide reliabl
 - Refresh segmentation models and logging coverage in response to audit findings, threat intelligence, or architectural updates.
 - Benchmark performance, availability, and telemetry targets, sharing results with the CAB.
 - Update standards and templates when new technologies or security directives require changes to baseline practices.
+- Maintain minimum logging profile, service tiering playbook, and cloud shared-responsibility matrix for network operations.
+- Feed metrics to the CAB and participate in annual framework refresh and artifact maintenance.
 - Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.

@@ -23,6 +23,9 @@ Provide a disciplined, customer-facing intake function that routes technology ne
 - CAB participation: Service Desk provides intake metrics and user impact assessments to CAB for high-risk or escalated requests.
 - Required SME sign-offs: Service Desk provides recommendations and evidence for CAB decisions; teams may not self-approve every step.
 - Separation of duties: Service Desk cannot approve their own requests; independent validation required from other teams.
+- Artifact stewardship: Service Desk consumes and maintains data classification matrix, accessibility/privacy checklist, and standard change catalog for intake processes.
+- Risk scoring participation: Service Desk participates in qualitative risk assessment and provides business impact context for risk scoring.
+- RACI table participation: Service Desk serves as Responsible party for intake processes and Consulted for impact assessments across all gates.
 
 4. Collaboration Touchpoints
 ----------------------------
@@ -46,4 +49,6 @@ Provide a disciplined, customer-facing intake function that routes technology ne
 - Provide refresher training for requestors on documentation expectations, logging requirements, and gate sequencing.
 - Capture user satisfaction feedback and share insights with the CAB.
 - Update self-service resources whenever standards, templates, or gate requirements change.
+- Maintain data classification matrix, accessibility/privacy checklist, and standard change catalog for intake processes.
+- Feed metrics to the CAB and participate in annual framework refresh and artifact maintenance.
 - Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.

@@ -5,6 +5,26 @@
 --------------------
 This overview captures recommended best practices for coordinating technology work in alignment with the Mayor's [Executive Directive No. 2 on cybersecurity](https://d3n8a8pro7vhmx.cloudfront.net/mayorofla/pages/17070/attachments/original/1426620047/ED2_with_signature_and_letterhead.pdf). A signed copy is stored in `executive_directive_2/executive_directive_2_signed_letterhead.pdf`. It defines standard approval gates and collaboration touchpoints every technology request should satisfy before funds are committed or enterprise assets are changed. This framework applies to the entire organization—all departments, business units, contractors, and vendors that interact with the City's technology environment. Organizations must maintain awareness of applicable laws and regulations including but not limited to CIS, NIST, TSA, CPRA, CJIS, and GDPR requirements. This framework remains tool-agnostic and focuses on governance outcomes rather than specific platform implementations. This document is guidance, not a formal policy, and nothing here should be viewed as new; it reflects long-standing industry standards and City directives that everyone is expected to understand and follow.
 
+### Document Hierarchy & Maintenance
+
+**Document Types and Ownership:**
+- **Policy:** Executive-level direction and mandatory requirements (owned by executive leadership, approved by governance bodies)
+- **Standard:** Technical and operational requirements (owned by subject matter experts, approved by CAB)
+- **Procedure:** Step-by-step implementation guidance (owned by operational teams, approved by team leads)
+- **Guideline:** Recommended best practices and optional guidance (owned by teams, reviewed by peers)
+
+**Version and Approval Requirements:**
+- All documents must include version numbers, approval dates, and review schedules
+- Policy changes require executive approval and stakeholder notification
+- Standard changes require CAB review and technical validation
+- Procedure and guideline changes require team lead approval and peer review
+
+**Annual Review Cadence:**
+- Policies: Annual review with executive oversight
+- Standards: Annual review with CAB participation
+- Procedures: Annual review with operational team validation
+- Guidelines: Annual review with peer feedback integration
+
 2. Guiding Principles
 ---------------------
 - Ownership is defined and documented for the full lifecycle of every asset, service, or process.
@@ -74,12 +94,29 @@ Organizations may consider solutions such as ServiceNow, Jira, Cherwell, or simi
 ---------------------------------------
 Every technology request progresses through the following stages. Gate artifacts are stored with the request record and may not be bypassed. Use the quick-reference summary in [Gates Quick Reference](./gates_quick_reference.html) for a one-page view of gate expectations. Gate templates are organized in `templates/gates/`, with supporting team worksheets in the team-specific subfolders.
 
+**Supporting Documentation:**
+- [Document Hierarchy & Maintenance](standards/document_hierarchy.html) - Document types, ownership, and approval requirements
+- [Data Classification Matrix](standards/data_classification_matrix.html) - Data classification levels and handling requirements
+- [Minimum Logging Profile](standards/minimum_logging_profile.html) - Required log sources and retention targets
+- [Change Taxonomy and Catalog](standards/change_taxonomy_and_catalog.html) - Change types and standard change procedures
+- [Risk Scoring Method](standards/risk_scoring_method.html) - Risk assessment methodology and escalation thresholds
+- [Gate to NIST/CIS Matrix](crosswalks/gate_to_nist_cis_matrix.html) - Compliance mapping to NIST CSF and CIS Controls
+
+**Template Library:**
+- [Vendor Due Diligence Checklist](templates/vendor_due_diligence_checklist.html) - Required vendor security artifacts and assessment process
+- [Cloud Shared Responsibility Matrix](templates/cloud_shared_responsibility_matrix.html) - Cloud service responsibility mapping templates
+- [Service Tiering Playbook](templates/service_tiering_playbook.html) - Service tier definitions and SLA requirements
+- [Gate RACI Reference](templates/gate_raci_reference.html) - Responsibility and accountability matrices for all gates
+- [Risk Register Template](templates/risk_register_template.html) - Risk documentation and management template
+- [SDLC Quality Lane](templates/sdlc_quality_lane.html) - Application development security checklist
+- [Accessibility & Privacy Checklist](templates/accessibility_privacy_checklist.html) - WCAG compliance and privacy impact assessment
+
 - Gate 0 - Business Need Intake
   - Required artifacts: intake form, business justification, funding source, target timeline, ownership acknowledgement.
   - Service Desk confirms completeness and assigns tracking ID in the centralized request solution. Informal channels do not satisfy intake requirements.
   - Separation of duties: Service Desk cannot approve their own requests; independent validation required.
-  - Business justification criteria: Must articulate mission/outcome/value; "tech debt" alone is insufficient unless debt remediation is fully scoped and risk-ranked with clear outcomes.
-  - Documentation requirements: All business justification must include regulatory compliance considerations and data classification.
+  - Business justification criteria: Must articulate mission/outcome/value or risk reduction; "tech debt" only acceptable if fully scoped with risk impact assessment and clear remediation outcomes.
+  - Documentation requirements: All business justification must include regulatory compliance considerations and data classification references.
   - Emergency change handling: Emergency requests must still follow formal intake but may expedite subsequent gates with CAB oversight.
   - Suggested SLA: Triage within 2 business days (requires CAB review if repeatedly missed).
 
@@ -90,7 +127,9 @@ Every technology request progresses through the following stages. Gate artifacts
   - Owners confirm they can accept responsibilities; otherwise the request is paused until gaps are resolved.
   - Separation of duties: Teams cannot approve their own work without independent validation from another team.
   - Dual approvals: High-risk or high-impact requests require dual approval from both technical and business stakeholders.
-  - Cloud workloads: Special consideration for shared responsibility model and cloud provider dependencies; shared-responsibility mapping required.
+  - Data classification expectations: All requests must reference the [Data Classification Matrix](standards/data_classification_matrix.html) and include appropriate handling requirements.
+  - Accessibility/privacy checks: WCAG 2.1 AA compliance validation and privacy impact assessment required for citizen-facing systems.
+  - Cloud workloads: Special consideration for shared responsibility model and cloud provider dependencies; [cloud shared-responsibility mapping](templates/cloud_shared_responsibility_matrix.html) required.
   - Vendor/contractor steps: Third-party involvement must be documented with clear ownership boundaries; vendor onboarding preparation required.
   - Suggested SLA: Impact assessment within 5 business days (requires CAB review if repeatedly missed).
 
@@ -100,22 +139,28 @@ Every technology request progresses through the following stages. Gate artifacts
   - Security highlights risk gaps identified through vulnerability management or other monitoring efforts; teams must either remediate or file a formal exception.
   - Outputs: go/no-go decision, remediation tasks, or escalation to the CAB.
   - Separation of duties: Security team cannot approve their own infrastructure requests; independent technical review required.
-  - SIEM evidence: All technical designs must include logging and monitoring requirements with SIEM integration.
+  - Data classification validation: Technical designs must align with data classification requirements and handling procedures.
+  - Accessibility/privacy validation: WCAG 2.1 AA compliance verification and privacy impact assessment completion required.
+  - SIEM evidence: All technical designs must include logging and monitoring requirements with [minimum logging profile](standards/minimum_logging_profile.html) verification.
   - Cloud readiness: Cloud workloads must demonstrate compliance with shared responsibility model; cloud readiness validation required.
+  - Risk scoring: Qualitative risk assessment using [risk scoring method](standards/risk_scoring_method.html) with CAB escalation thresholds.
   - Suggested SLA: Technical review within 7 business days (requires CAB review if repeatedly missed).
 
 - Gate 3 - Financial & Procurement Approval
   - Purchasing authority verifies vendor compliance, warranty terms, maintenance coverage, and budget alignment.
   - Required artifacts: bill of materials, quotes, vendor security attestations, funding authorization signature.
   - Separation of duties: Procurement cannot approve their own department's requests; independent financial oversight required.
+  - Third-party due diligence: SOC 2 Type II or equivalent attestation, SIG-Lite questionnaire completion, breach notification SLA documentation, data location disclosure required.
   - Vendor/contractor workflow: Risk assessment, contract clauses, onboarding requirements with CAB oversight.
-  - Vendor checkpoints: All vendor relationships must include security attestations and compliance documentation.
+  - Vendor checkpoints: All vendor relationships must include security attestations and compliance documentation using [vendor due diligence checklist](templates/vendor_due_diligence_checklist.html).
   - Contract clauses: Vendor agreements must include cybersecurity requirements and audit rights.
   - Suggested SLA: Procurement review within 3 business days (requires CAB review if repeatedly missed).
 
 - Gate 4 - Implementation Readiness
   - All teams confirm prerequisites are satisfied prior to implementation: naming conventions, asset tags, image approval, change window, rollback plan.
   - Required artifacts: implementation checklist, test results summary, change record, communication plan, confirmation that mandatory security tooling baselines are deployed and logging feeds are configured to the central SIEM.
+  - Minimum logging profile verification: All systems must meet [minimum logging profile](standards/minimum_logging_profile.html) requirements with retention and verification confirmation.
+  - Service tiering checks: RTO/RPO validation, patch/vulnerability management SLA confirmation, backup and recovery testing completion.
   - SIEM/logging evidence: Monitoring handoffs and post-change validation requirements.
   - Cloud readiness: Cloud deployments must demonstrate proper configuration management and monitoring setup.
   - Emergency change handling: Emergency implementations require retroactive CAB review within two business days with complete evidence package.
@@ -124,13 +169,32 @@ Every technology request progresses through the following stages. Gate artifacts
 - Gate 5 - Post-Implementation Verification
   - Requestor and core teams complete verification, store documentation, and confirm operational ownership.
   - Required artifacts: validation report, monitoring handoff, updated CMDB/asset registry entry, training materials (if applicable), confirmation that ongoing logging continues to the SIEM.
+  - Risk register updates: All identified risks must be documented in the [risk register template](templates/risk_register_template.html) with mitigation status and review dates.
+  - Legal-hold confirmation: Data retention and legal-hold requirements must be documented and confirmed for applicable systems.
   - SIEM/logging evidence: Post-change validation and ongoing monitoring confirmation.
   - Emergency change handling: Emergency changes must complete verification within two business days with CAB review.
   - Evidence requirements: All implementations must provide audit evidence of successful deployment and ongoing monitoring.
   - Suggested SLA: Verification completion within 3 business days (requires CAB review if repeatedly missed).
 
+**Change Taxonomy and Risk Scoring:**
+
+**Change Types:**
+- **Normal Changes:** Standard requests following full gate process with CAB approval
+- **Major Changes:** High-impact changes requiring additional review and approval
+- **Standard Changes:** Pre-approved, low-risk changes with streamlined approval (see [change taxonomy and catalog](standards/change_taxonomy_and_catalog.html))
+- **Emergency Changes:** Urgent changes with retroactive CAB review within two business days
+
+**Risk Scoring Method:**
+- Qualitative risk assessment using Likelihood (1-5) × Impact (1-5) scale
+- Risk scores 15+ require CAB escalation and executive approval
+- Residual risk acceptance requires documented justification and approval authority
+- See [risk scoring method](standards/risk_scoring_method.html) for detailed criteria
+
 **Emergency and Standard Changes:**
-Emergency and pre-approved standard changes still run through the same gates, with CAB post-review within two business days for emergency changes. All changes must maintain audit trail and evidence collection regardless of approval pathway.
+Emergency and pre-approved standard changes still run through the same gates, with CAB post-review within two business days for emergency changes. All changes must maintain audit trail and evidence collection regardless of approval pathway. Standard change catalog requires annual review and CAB oversight.
+
+**Gate RACI Reference:**
+For detailed responsibility and accountability matrices across all gates, see the [Gate RACI Reference](templates/gate_raci_reference.html) which outlines Responsible, Accountable, Consulted, and Informed roles for each gate artifact.
 
 ### Vendor & Contractor Governance
 
@@ -221,6 +285,9 @@ Usage expectations:
 - Emergency changes follow the same gates retroactively within two business days and require CAB review.
 - When team process requirements conflict, the stricter control prevails unless an exception is granted in writing by the CAB.
 - Separation of duties for approval and verification activities: No single team can approve all steps; independent validation required across teams.
+- Minimum logging sources and retention: All systems must meet [minimum logging profile](standards/minimum_logging_profile.html) requirements with defined retention periods and verification procedures.
+- Cloud shared-responsibility matrices: All cloud workloads must document control ownership using [cloud shared-responsibility matrix](templates/cloud_shared_responsibility_matrix.html) templates.
+- Service tier commitments: All services must be classified using [service tiering playbook](templates/service_tiering_playbook.html) with defined RTO/RPO and maintenance windows.
 
 ### SIEM and Logging Standards
 
@@ -254,5 +321,9 @@ Usage expectations:
 - Matured processes are documented as playbooks and shared to reduce rework and accelerate compliant delivery.
 - Security shares vulnerability management trends, SOC findings, and exception metrics so teams address root causes, not just individual incidents.
 - Annual framework refresh incorporates CAB recommendations, regulatory updates, and industry best practices.
+- Maintain crosswalk documentation: [Gate to NIST/CIS matrix](crosswalks/gate_to_nist_cis_matrix.html) for compliance mapping and audit preparation.
+- Maintain logging profile: Annual review and update of [minimum logging profile](standards/minimum_logging_profile.html) based on threat landscape and compliance requirements.
+- Maintain standard change catalog: Annual review and update of [change taxonomy and catalog](standards/change_taxonomy_and_catalog.html) with CAB approval.
+- Annual accessibility/privacy validation: WCAG 2.1 AA compliance verification and privacy impact assessment review for all citizen-facing systems.
 
 

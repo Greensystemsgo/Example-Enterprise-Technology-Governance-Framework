@@ -24,6 +24,9 @@ Deliver stable, secure, and recoverable compute, storage, and platform services 
 - CAB participation: Infrastructure provides technical expertise and capacity assessments to CAB for high-impact or complex requests.
 - Required SME sign-offs: Infrastructure provides recommendations and evidence for CAB decisions; teams may not self-approve every step.
 - Separation of duties: Infrastructure cannot approve their own requests; independent validation required from other teams.
+- Artifact stewardship: Infrastructure consumes and maintains minimum logging profile, service tiering playbook, and cloud shared-responsibility matrix for infrastructure operations.
+- Risk scoring participation: Infrastructure participates in qualitative risk assessment and provides technical risk context for risk scoring.
+- RACI table participation: Infrastructure serves as Responsible party for hosting and capacity assessments and Accountable for infrastructure design decisions.
 
 4. Collaboration Touchpoints
 ----------------------------
@@ -47,4 +50,6 @@ Deliver stable, secure, and recoverable compute, storage, and platform services 
 - Review control posture quarterly with Security and Internal Audit to confirm alignment with city directives.
 - Track lead times, change success rate, backup compliance, logging coverage, and ownership coverage; share metrics with the CAB.
 - Publish an annual modernization roadmap detailing priorities, resource needs, and risk-reduction initiatives.
+- Maintain minimum logging profile, service tiering playbook, and cloud shared-responsibility matrix for infrastructure operations.
+- Feed metrics to the CAB and participate in annual framework refresh and artifact maintenance.
 - Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.

@@ -23,6 +23,9 @@ Protect the City's information assets by enforcing cybersecurity directives, ass
 - CAB participation: Security provides risk assessments and security recommendations to CAB for all high-risk or complex requests.
 - Required SME sign-offs: Security provides recommendations and evidence for CAB decisions; teams may not self-approve every step.
 - Separation of duties: Security cannot approve their own requests; independent validation required from other teams.
+- Artifact stewardship: Security owns and maintains risk scoring method, risk register template, security review template, and vendor due diligence checklist.
+- Risk scoring participation: Security leads qualitative risk assessment and provides security risk context for risk scoring across all gates.
+- RACI table participation: Security serves as Responsible party for risk assessments and Accountable for security control decisions.
 
 4. Collaboration Touchpoints
 ----------------------------
@@ -46,4 +49,6 @@ Protect the City's information assets by enforcing cybersecurity directives, ass
 - Track remediation performance, risk trends, exception closure rates, audit observations, and SOC isolation events; report insights to the CAB.
 - Update security baselines in response to new directives, threats, or technology platforms.
 - Deliver periodic awareness sessions for core teams and requestors on evolving security expectations, exception processes, and logging mandates.
+- Maintain risk scoring method, risk register template, security review template, and vendor due diligence checklist.
+- Feed metrics to the CAB and participate in annual framework refresh and artifact maintenance.
 - Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.
