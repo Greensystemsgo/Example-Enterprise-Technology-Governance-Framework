@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/env python3
-"""Build script that converts Markdown content in ./docs into HTML output in ./build."""
+"""Build script that converts Markdown content in ./content into HTML output in ./docs."""
 from __future__ import annotations
 
 import os
@@ -15,9 +15,9 @@ except ImportError as exc:  # pragma: no cover - guidance for missing dependency
     ) from exc
 
 ROOT_DIR = Path(__file__).resolve().parent
-DOCS_DIR = ROOT_DIR / "docs"
-BUILD_DIR = ROOT_DIR / "build"
-INDEX_PATH = BUILD_DIR / "index.html"
+SOURCE_DIR = ROOT_DIR / "content"
+OUTPUT_DIR = ROOT_DIR / "docs"
+INDEX_PATH = OUTPUT_DIR / "index.html"
 
 CSS_BLOCK = """
 body {
@@ -75,14 +75,14 @@ def title_from_path(md_path: Path) -> str:
     cleaned = " ".join(part for part in name.split() if part)
     return cleaned.title() or md_path.stem
 
-def ensure_docs_dir() -> None:
-    if not DOCS_DIR.exists():
-        raise SystemExit(f"Docs directory not found at {DOCS_DIR}.")
+def ensure_source_dir() -> None:
+    if not SOURCE_DIR.exists():
+        raise SystemExit(f"Source directory not found at {SOURCE_DIR}.")
 
-def reset_build_dir() -> None:
-    if BUILD_DIR.exists():
-        shutil.rmtree(BUILD_DIR)
-    BUILD_DIR.mkdir(parents=True, exist_ok=True)
+def reset_output_dir() -> None:
+    if OUTPUT_DIR.exists():
+        shutil.rmtree(OUTPUT_DIR)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def read_markdown(md_file: Path) -> str:
     return md_file.read_text(encoding="utf-8")
@@ -116,9 +116,9 @@ def wrap_html(title: str, nav_href: str, body_html: str) -> str:
 """
 
 def build_page(md_file: Path) -> Tuple[str, Path]:
-    rel_md = md_file.relative_to(DOCS_DIR)
+    rel_md = md_file.relative_to(SOURCE_DIR)
     rel_html = rel_md.with_suffix(".html")
-    output_path = BUILD_DIR / rel_html
+    output_path = OUTPUT_DIR / rel_html
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     title = title_from_path(md_file)
@@ -129,6 +129,15 @@ def build_page(md_file: Path) -> Tuple[str, Path]:
     html = wrap_html(title, nav_rel, body_html)
     output_path.write_text(html, encoding="utf-8")
     return title, rel_html
+
+def copy_non_markdown_files() -> None:
+    """Copy all non-Markdown files from source to output directory."""
+    for source_file in SOURCE_DIR.rglob("*"):
+        if source_file.is_file() and not source_file.suffix == ".md":
+            rel_path = source_file.relative_to(SOURCE_DIR)
+            output_path = OUTPUT_DIR / rel_path
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_file, output_path)
 
 def build_index(pages: List[Tuple[str, Path]]) -> None:
     items = []
@@ -146,12 +155,12 @@ def build_index(pages: List[Tuple[str, Path]]) -> None:
     INDEX_PATH.write_text(index_html, encoding="utf-8")
 
 def main() -> None:
-    ensure_docs_dir()
-    reset_build_dir()
+    ensure_source_dir()
+    reset_output_dir()
 
-    md_files = sorted(DOCS_DIR.rglob("*.md"))
+    md_files = sorted(SOURCE_DIR.rglob("*.md"))
     if not md_files:
-        print("No Markdown files found under ./docs.")
+        print("No Markdown files found under ./content.")
         return
 
     pages: List[Tuple[str, Path]] = []
@@ -159,8 +168,9 @@ def main() -> None:
         title, rel_html = build_page(md_file)
         pages.append((title, rel_html))
 
+    copy_non_markdown_files()
     build_index(pages)
-    print(f"Converted {len(pages)} Markdown files into HTML under {BUILD_DIR}.")
+    print(f"Converted {len(pages)} Markdown files into HTML under {OUTPUT_DIR}.")
 
 if __name__ == "__main__":
     main()

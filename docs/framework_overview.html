@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Framework Overview</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="enterprise-technology-governance-overview">﻿Enterprise Technology Governance Overview</h1>
+<h2 id="1-purpose-and-scope">1. Purpose and Scope</h2>
+<p>This overview captures recommended best practices for coordinating technology work in alignment with the Mayor's <a href="https://d3n8a8pro7vhmx.cloudfront.net/mayorofla/pages/17070/attachments/original/1426620047/ED2_with_signature_and_letterhead.pdf">Executive Directive No. 2 on cybersecurity</a>. A signed copy is stored in <code>executive_directive_2/executive_directive_2_signed_letterhead.pdf</code>. It defines standard approval gates and collaboration touchpoints every technology request should satisfy before funds are committed or enterprise assets are changed. This framework applies to the entire organization—all departments, business units, contractors, and vendors that interact with the City's technology environment. Organizations must maintain awareness of applicable laws and regulations including but not limited to CIS, NIST, TSA, CPRA, CJIS, and GDPR requirements. This framework remains tool-agnostic and focuses on governance outcomes rather than specific platform implementations. This document is guidance, not a formal policy, and nothing here should be viewed as new; it reflects long-standing industry standards and City directives that everyone is expected to understand and follow.</p>
+<h2 id="2-guiding-principles">2. Guiding Principles</h2>
+<ul>
+<li>Ownership is defined and documented for the full lifecycle of every asset, service, or process.</li>
+<li>No work proceeds without passing the prescribed gates; approvals are secured prior to purchase orders, provisioning, or deployment.</li>
+<li>Documentation and audit trails are mandatory. If it is not recorded, it is not considered complete.</li>
+<li>All requests, approvals, artifacts, and communications are captured in the centralized request solution. Ad-hoc channels (chat, email, hallway conversations) do not meet compliance requirements.</li>
+<li>Collaboration across core teams (Infrastructure, Active Directory, Service Desk, Network, Security) is the default operating model.</li>
+<li>Practices align with the City's cybersecurity mandates, including the Mayor's <a href="https://d3n8a8pro7vhmx.cloudfront.net/mayorofla/pages/17070/attachments/original/1426620047/ED2_with_signature_and_letterhead.pdf">Executive Directive No. 2 on cybersecurity</a>.</li>
+<li>Audit expectations mirror TSA, CIS, and NIST guidance: controls must be reviewable, repeatable, and evidenced through the centralized request process.</li>
+</ul>
+<h2 id="3-governance-bodies-and-roles">3. Governance Bodies and Roles</h2>
+<ul>
+<li>Business Requestor: Initiates requests, provides business justification, funding source, and confirms operational ownership.</li>
+<li>Service Desk (<a href="teams/service_desk_overview.html">Service Desk Overview</a>): Operates the intake queue, validates completeness, and logs requests in the official system of record. The Service Desk manages the workstation fleet lifecycle by default; its involvement in server workflows is coordinated with Infrastructure and the owning team based on organizational policy.</li>
+<li>Infrastructure Team (<a href="teams/infrastructure_overview.html">Infrastructure Overview</a>): Reviews hosting, compute, storage, backup, and platform requirements; leads provisioning after all gates clear. Server ownership defaults to Infrastructure unless the requesting team formally accepts lifecycle responsibilities during Gate 1.</li>
+<li>Active Directory (AD) Team (<a href="teams/active_directory_overview.html">Active Directory Overview</a>): Manages domain joins, account provisioning, and directory policy enforcement.</li>
+<li>Network Team (<a href="teams/network_overview.html">Network Overview</a>): Ensures segmentation, addressing, firewall, and connectivity compliance.</li>
+<li>Security Team (including SOC) (<a href="teams/security_overview.html">Security Overview</a>): Performs risk assessment, validates alignment with security baselines, identifies process gaps (e.g., vulnerability management, logging coverage), maintains the exception program, and may isolate or take assets offline to investigate anomalies.</li>
+<li>Change Advisory Board (CAB): Reviews escalated or high-risk items, resolves disputes, and signs off on exceptions. The CAB serves as the governance authority for technology change management.</li>
+</ul>
+<h3 id="governance-council-operating-as-change-advisory-board-cab">Governance Council Operating as Change Advisory Board (CAB)</h3>
+<p>The Governance Council operates in a CAB capacity as the primary governance body for technology change oversight, with the following characteristics:</p>
+<p><strong>Membership Example:</strong>
+- CIO (Chair)
+- CISO
+- Infrastructure Director
+- Security Lead
+- Legal/Procurement Liaison
+- Rotating Business Owner (based on request domain)</p>
+<p><strong>Quorum Rules:</strong>
+- Minimum three members present
+- Must include Security or Finance representative for all decisions
+- Business owner participation required for requests affecting their domain
+- No single team can approve all steps; CAB validates that approvals span independent reviewers</p>
+<p><strong>Decision Authority:</strong>
+- Pause work that fails to meet governance standards
+- Demand remediation actions and evidence
+- Accept residual risk with documented justification
+- Escalate to executive leadership when necessary</p>
+<p><strong>Escalation Triggers:</strong>
+- High-risk requests with incomplete evidence
+- Emergency changes requiring retroactive review
+- Exception requests exceeding standard thresholds
+- Cross-departmental impact or resource conflicts
+- Regulatory compliance concerns</p>
+<h3 id="centralized-request-solution-expectations">Centralized Request Solution Expectations</h3>
+<p>The centralized request solution serves as the single source of truth for all technology requests and must provide the following capabilities:</p>
+<p><strong>Core Capabilities:</strong>
+- Role-based access control with appropriate segregation of duties
+- Comprehensive audit logs with immutable retention
+- Document retention aligned with records management policies
+- API access for reporting and integration needs
+- Offline contingency procedures for emergency situations</p>
+<p><strong>Tool Examples (Optional Illustrations):</strong>
+Organizations may consider solutions such as ServiceNow, Jira, Cherwell, or similar platforms that provide these capabilities. These examples are provided for illustration only; the specific tool selection should align with organizational standards and integration requirements.</p>
+<h2 id="4-standard-request-lifecycle-and-gates">4. Standard Request Lifecycle and Gates</h2>
+<p>Every technology request progresses through the following stages. Gate artifacts are stored with the request record and may not be bypassed. Use the quick-reference summary in <a href="./gates_quick_reference.html">Gates Quick Reference</a> for a one-page view of gate expectations. Gate templates are organized in <code>templates/gates/</code>, with supporting team worksheets in the team-specific subfolders.</p>
+<ul>
+<li>Gate 0 - Business Need Intake</li>
+<li>Required artifacts: intake form, business justification, funding source, target timeline, ownership acknowledgement.</li>
+<li>Service Desk confirms completeness and assigns tracking ID in the centralized request solution. Informal channels do not satisfy intake requirements.</li>
+<li>Separation of duties: Service Desk cannot approve their own requests; independent validation required.</li>
+<li>Business justification criteria: Must articulate mission/outcome/value; "tech debt" alone is insufficient unless debt remediation is fully scoped and risk-ranked with clear outcomes.</li>
+<li>Documentation requirements: All business justification must include regulatory compliance considerations and data classification.</li>
+<li>Emergency change handling: Emergency requests must still follow formal intake but may expedite subsequent gates with CAB oversight.</li>
+<li>
+<p>Suggested SLA: Triage within 2 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 1 - Impact &amp; Ownership Confirmation</p>
+</li>
+<li>Infrastructure, AD, Network, and Security teams receive the request simultaneously.</li>
+<li>Required artifacts: ownership matrix, asset classification, asset type declaration (workstation, server, other), data sensitivity statement, support runway plan, capacity estimate, ownership model selection (Infrastructure-managed or Requestor-managed).</li>
+<li>All requests to create, modify, disable, or delete directory objects must be routed through the centralized request process so lifecycle actions remain auditable.</li>
+<li>Owners confirm they can accept responsibilities; otherwise the request is paused until gaps are resolved.</li>
+<li>Separation of duties: Teams cannot approve their own work without independent validation from another team.</li>
+<li>Dual approvals: High-risk or high-impact requests require dual approval from both technical and business stakeholders.</li>
+<li>Cloud workloads: Special consideration for shared responsibility model and cloud provider dependencies; shared-responsibility mapping required.</li>
+<li>Vendor/contractor steps: Third-party involvement must be documented with clear ownership boundaries; vendor onboarding preparation required.</li>
+<li>
+<p>Suggested SLA: Impact assessment within 5 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 2 - Technical &amp; Security Review</p>
+</li>
+<li>Infrastructure validates hosting strategy; Network confirms network design; Security issues the risk assessment.</li>
+<li>Required artifacts: architecture diagram, configuration standards checklist, patching approach, security controls checklist, exception log (if applicable).</li>
+<li>Security highlights risk gaps identified through vulnerability management or other monitoring efforts; teams must either remediate or file a formal exception.</li>
+<li>Outputs: go/no-go decision, remediation tasks, or escalation to the CAB.</li>
+<li>Separation of duties: Security team cannot approve their own infrastructure requests; independent technical review required.</li>
+<li>SIEM evidence: All technical designs must include logging and monitoring requirements with SIEM integration.</li>
+<li>Cloud readiness: Cloud workloads must demonstrate compliance with shared responsibility model; cloud readiness validation required.</li>
+<li>
+<p>Suggested SLA: Technical review within 7 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 3 - Financial &amp; Procurement Approval</p>
+</li>
+<li>Purchasing authority verifies vendor compliance, warranty terms, maintenance coverage, and budget alignment.</li>
+<li>Required artifacts: bill of materials, quotes, vendor security attestations, funding authorization signature.</li>
+<li>Separation of duties: Procurement cannot approve their own department's requests; independent financial oversight required.</li>
+<li>Vendor/contractor workflow: Risk assessment, contract clauses, onboarding requirements with CAB oversight.</li>
+<li>Vendor checkpoints: All vendor relationships must include security attestations and compliance documentation.</li>
+<li>Contract clauses: Vendor agreements must include cybersecurity requirements and audit rights.</li>
+<li>
+<p>Suggested SLA: Procurement review within 3 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 4 - Implementation Readiness</p>
+</li>
+<li>All teams confirm prerequisites are satisfied prior to implementation: naming conventions, asset tags, image approval, change window, rollback plan.</li>
+<li>Required artifacts: implementation checklist, test results summary, change record, communication plan, confirmation that mandatory security tooling baselines are deployed and logging feeds are configured to the central SIEM.</li>
+<li>SIEM/logging evidence: Monitoring handoffs and post-change validation requirements.</li>
+<li>Cloud readiness: Cloud deployments must demonstrate proper configuration management and monitoring setup.</li>
+<li>Emergency change handling: Emergency implementations require retroactive CAB review within two business days with complete evidence package.</li>
+<li>
+<p>Suggested SLA: Readiness confirmation within 2 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 5 - Post-Implementation Verification</p>
+</li>
+<li>Requestor and core teams complete verification, store documentation, and confirm operational ownership.</li>
+<li>Required artifacts: validation report, monitoring handoff, updated CMDB/asset registry entry, training materials (if applicable), confirmation that ongoing logging continues to the SIEM.</li>
+<li>SIEM/logging evidence: Post-change validation and ongoing monitoring confirmation.</li>
+<li>Emergency change handling: Emergency changes must complete verification within two business days with CAB review.</li>
+<li>Evidence requirements: All implementations must provide audit evidence of successful deployment and ongoing monitoring.</li>
+<li>Suggested SLA: Verification completion within 3 business days (requires CAB review if repeatedly missed).</li>
+</ul>
+<p><strong>Emergency and Standard Changes:</strong>
+Emergency and pre-approved standard changes still run through the same gates, with CAB post-review within two business days for emergency changes. All changes must maintain audit trail and evidence collection regardless of approval pathway.</p>
+<h3 id="vendor-contractor-governance">Vendor &amp; Contractor Governance</h3>
+<p>All vendor and contractor relationships must follow a structured governance workflow with CAB oversight:</p>
+<p><strong>Intake &amp; Assessment:</strong>
+- All vendor engagements must originate through the centralized request process
+- Initial assessment includes security posture, compliance capabilities, and risk profile
+- Business justification must demonstrate vendor necessity and alternatives considered</p>
+<p><strong>Contract Clauses:</strong>
+- Cybersecurity requirements and audit rights must be included in all agreements
+- Data handling and privacy obligations must align with applicable regulations
+- Incident response and breach notification procedures must be defined
+- Termination and data return procedures must be specified</p>
+<p><strong>Onboarding:</strong>
+- Vendor access provisioning follows the same gate process as internal requests
+- Identity lifecycle management for vendor accounts must be documented
+- Network access and segmentation requirements must be validated
+- Security training and awareness requirements must be completed</p>
+<p><strong>Ongoing Monitoring:</strong>
+- Regular security assessments and compliance reviews
+- Performance metrics and SLA monitoring
+- Access reviews and privilege management
+- Incident response coordination and reporting</p>
+<p><strong>Renewal &amp; Offboarding:</strong>
+- Contract renewal requires updated security assessment and CAB review
+- Offboarding must include complete data return and access revocation
+- Knowledge transfer and documentation handover requirements
+- Post-engagement security review and lessons learned</p>
+<p><strong>Clear Owner Expectations:</strong>
+- Each vendor relationship must have a designated business owner
+- Technical oversight responsibilities must be clearly defined
+- Security monitoring and incident response roles must be assigned
+- Regular CAB reporting on vendor performance and risk status
+- Owners must maintain evidence throughout the lifecycle; Procurement, Security, and CAB share oversight responsibilities</p>
+<h2 id="5-ownership-expectations">5. Ownership Expectations</h2>
+<p>The ownership matrix is the authoritative record of who is responsible for every asset, configuration item, and supporting process introduced by a request. It is created during Gate 0 and validated at Gate 1; requests without a complete matrix do not advance. The matrix stays attached to the request so auditors and responders can see exactly who owns day-to-day operations versus escalation and compliance tasks.</p>
+<p>Minimum columns for the ownership matrix:</p>
+<ul>
+<li>Asset/Service Name</li>
+<li>Primary Owner (name, team, contact)</li>
+<li>Backup Owner (name, team, contact)</li>
+<li>Support Model (Infrastructure-managed or Requestor-managed)</li>
+<li>Core Responsibilities (patch cadence, monitoring, backups, DR, documentation)</li>
+<li>Escalation Path (24x7 on-call rotation or contractual contact)</li>
+<li>Runbook/Artifact Links (procedures, diagrams, CMDB entries)</li>
+</ul>
+<p>Example ownership matrix entry:</p>
+<table>
+<thead>
+<tr>
+<th>Asset/Service</th>
+<th>Primary Owner</th>
+<th>Backup Owner</th>
+<th>Support Model</th>
+<th>Core Responsibilities</th>
+<th>Escalation Path</th>
+<th>Runbook Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR Records Platform</td>
+<td>Jane Smith (HRIS)</td>
+<td>Infrastructure Duty Manager</td>
+<td>Infrastructure-managed</td>
+<td>Quarterly patching, nightly backups, SIEM log review</td>
+<td>Infrastructure On-Call (213-555-0100)</td>
+<td><code>\\city\runbooks\hris\operations.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>Usage expectations:</p>
+<ul>
+<li>Workstations default to the Service Desk support model (see <a href="teams/service_desk_overview.html">Service Desk Overview</a>); servers default to the Infrastructure-managed model unless the requesting team formally accepts lifecycle ownership (<a href="teams/infrastructure_overview.html">Infrastructure Overview</a>).</li>
+<li>Directory-integrated services must document their AD dependencies and matrix ownership in collaboration with the <a href="teams/active_directory_overview.html">Active Directory Overview</a> practices.</li>
+<li>Network connectivity, segmentation, and firewall stewardship must align with the responsibilities documented in the <a href="teams/network_overview.html">Network Overview</a>.</li>
+<li>Security obligations (patching SLAs, logging, exception handling, incident response escalation) are documented in the matrix consistent with the <a href="teams/security_overview.html">Security Overview</a>.</li>
+<li>Requestors selecting the Requestor-managed model must document how they will fulfill Infrastructure and Security baseline tasks, including tooling requirements and evidence collection for audits.</li>
+<li>The matrix is reviewed at each gate to verify ownership remains accurate; changes after Gate 5 must be logged through the centralized request system so the matrix stays current.</li>
+</ul>
+<h2 id="6-documentation-audit-and-lifecycle-reviews">6. Documentation, Audit, and Lifecycle Reviews</h2>
+<ul>
+<li>Gate artifacts, approvals, and communications are stored in the centralized request system with version control and retention per records policy.</li>
+<li>Audit evidence must demonstrate alignment with TSA, CIS, and NIST expectations, including periodic lifecycle reviews of Active Directory objects and associated access.</li>
+<li>Directory object lifecycle reviews validate join requests, disablements, deletions, and permission changes. All actions are initiated through the centralized request process to preserve traceability.</li>
+<li>Security maintains a formal exception process. Requests that cannot meet baseline requirements, including logging obligations, use this process to document compensating controls, expiration dates, and risk acceptance.</li>
+<li>Evidence quality expectations: All documentation must be tool-independent and focus on business outcomes rather than specific platform implementations.</li>
+<li>Cloud alignment: Cloud workloads must clearly document which security controls are managed by the organization versus the cloud provider.</li>
+<li>Minimum annual review cadence: All technology assets and processes must undergo annual review with updated risk assessments and compliance validation.</li>
+<li>Team SOP development: Each team is expected to develop detailed standard operating procedures and policies based on this framework, tailored to their specific operational requirements.</li>
+</ul>
+<h2 id="7-cross-team-standards">7. Cross-Team Standards</h2>
+<ul>
+<li>Naming conventions for servers, workstations, network devices, and service accounts are published jointly and applied before Gate 4 approval.</li>
+<li>New hosts must deploy the mandatory security tooling stack, satisfy baseline hardening requirements, and forward logs to the central SIEM unless a documented security exception is approved.</li>
+<li>All technology assets—servers, workstations, network devices, appliances, applications, or specialty systems—must send security-relevant logs to the central SIEM.</li>
+<li>Asset inventory is updated at Gate 5; no asset operates in production without an assigned owner, maintenance plan, and lifecycle end date.</li>
+<li>Emergency changes follow the same gates retroactively within two business days and require CAB review.</li>
+<li>When team process requirements conflict, the stricter control prevails unless an exception is granted in writing by the CAB.</li>
+<li>Separation of duties for approval and verification activities: No single team can approve all steps; independent validation required across teams.</li>
+</ul>
+<h3 id="siem-and-logging-standards">SIEM and Logging Standards</h3>
+<p><strong>Minimum Telemetry Categories:</strong>
+- Endpoint security events (authentication, privilege escalation, file access)
+- Identity and access management (logins, permission changes, account modifications)
+- Network traffic and security events (firewall logs, intrusion detection, VPN access)
+- Cloud control plane activities (configuration changes, API calls, resource provisioning)</p>
+<p><strong>Evidence Quality Checks:</strong>
+- Log completeness validation and gap analysis
+- Timestamp accuracy and synchronization verification
+- Data integrity and tamper detection
+- Retention compliance and archival procedures</p>
+<p><strong>CAB Acceptance Criteria:</strong>
+- All security-relevant events must be captured and retained per policy
+- Log analysis capabilities must support incident investigation and compliance reporting
+- Integration with security tools and incident response workflows
+- Regular validation of logging effectiveness and coverage</p>
+<p><strong>Standard Changes and Maintenance:</strong>
+- Standard changes, maintenance windows, and emergency changes all follow the same gates with CAB oversight
+- Only pre-approved standard changes may shortcut timing but still require documentation and periodic review
+- All changes must maintain audit trail and evidence collection regardless of approval pathway</p>
+<h2 id="8-continuous-improvement">8. Continuous Improvement</h2>
+<ul>
+<li>Core teams meet monthly to review failed gates, escalations, and audit findings with CAB feedback integration.</li>
+<li>Lessons learned update standards, templates, and training materials for requestors.</li>
+<li>Matured processes are documented as playbooks and shared to reduce rework and accelerate compliant delivery.</li>
+<li>Security shares vulnerability management trends, SOC findings, and exception metrics so teams address root causes, not just individual incidents.</li>
+<li>Annual framework refresh incorporates CAB recommendations, regulatory updates, and industry best practices.</li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infrastructure Overview</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="infrastructure-team-overview">Infrastructure Team Overview</h1>
+<h2 id="1-mission">1. Mission</h2>
+<p>Deliver stable, secure, and recoverable compute, storage, and platform services that enable City departments to operate reliably and in compliance with cybersecurity directives. This overview shares recommended best practices aligned with the Mayor's Executive Directive on cybersecurity and is not a formal policy.</p>
+<h2 id="2-core-outcomes">2. Core Outcomes</h2>
+<ul>
+<li>Provisioning: Coordinate build activities for on-premises and cloud workloads once governance gates are cleared.</li>
+<li>Platform Resilience: Maintain patching, backup, and recovery practices that meet agreed recovery objectives.</li>
+<li>Server Custodianship: Serve as the default owner for server platforms unless a requesting team formally accepts lifecycle responsibilities through Gate 1.</li>
+<li>Security Baseline: Ensure every new host deploys the mandatory security tooling stack, meets hardening requirements, and forwards logs to the central SIEM unless a documented exception is approved.</li>
+<li>Standards Stewardship: Publish and maintain golden images, configuration baselines, and lifecycle plans for shared platforms.</li>
+<li>Operational Insight: Keep infrastructure records, diagrams, and metrics current so stakeholders can make informed decisions.</li>
+</ul>
+<h2 id="3-engagement-in-the-request-lifecycle">3. Engagement in the Request Lifecycle</h2>
+<ul>
+<li>Gate 0/1: Assess capacity impacts, validate ownership commitments, and highlight any prerequisite work submitted through the centralized request solution.</li>
+<li>Gate 2: Recommend hosting patterns, document infrastructure requirements, collaborate with Network and Security peers on the design package, and confirm logging/monitoring coverage.</li>
+<li>Gate 3: Confirm the bill of materials, licensing impacts, and support contracts before purchases proceed.</li>
+<li>Gate 4: Use the implementation checklist to verify naming conventions, image selection, backup enrollment, monitoring, mandatory security tooling deployment, SIEM integration, and change scheduling.</li>
+<li>Gate 5: Validate build outcomes, update inventories, deliver run notes, confirm logging flow, and confirm operational ownership.</li>
+<li>CAB participation: Infrastructure provides technical expertise and capacity assessments to CAB for high-impact or complex requests.</li>
+<li>Required SME sign-offs: Infrastructure provides recommendations and evidence for CAB decisions; teams may not self-approve every step.</li>
+<li>Separation of duties: Infrastructure cannot approve their own requests; independent validation required from other teams.</li>
+</ul>
+<h2 id="4-collaboration-touchpoints">4. Collaboration Touchpoints</h2>
+<ul>
+<li>Service Desk: Share status updates, standard build offerings, and knowledge articles for recurring requests, focusing on workstation engagement while coordinating server workflows as organizational policy dictates.</li>
+<li>Active Directory Team: Align on domain joins, group policies, and service account requirements.</li>
+<li>Network Team: Agree on segmentation, addressing, firewall changes, load-balancing considerations, and SIEM feed validation.</li>
+<li>Security Team: Review hardening, vulnerability scan results, logging configurations, residual risk statements, and exception requests until resolved.</li>
+<li>Cloud services: Infrastructure manages landing zone baselines, cloud resource provisioning, and shared responsibility model implementation for cloud workloads.</li>
+<li>Vendor oversight: Infrastructure validates hosting obligations, service level agreements, and technical requirements for vendor-managed infrastructure; role in vendor/contractor oversight as relevant.</li>
+</ul>
+<h2 id="5-key-checklists-and-artifacts">5. Key Checklists and Artifacts</h2>
+<ul>
+<li><a href="../templates/infrastructure/infrastructure_new_build_checklist.html">Infrastructure New Build Checklist</a>: covers provisioning, configuration hardening, mandatory tooling deployment, SIEM logging, and monitoring handoff.</li>
+<li><a href="../templates/infrastructure/infrastructure_image_release_log.html">Infrastructure Image Release Log</a>: outlines version history, validation evidence, and deployment guidance.</li>
+<li><a href="../templates/infrastructure/infrastructure_maintenance_calendar.html">Infrastructure Maintenance Calendar</a>: shows planned patch windows, emergency windows, and blackout periods.</li>
+<li><a href="../templates/infrastructure/infrastructure_backup_readiness_worksheet.html">Infrastructure Backup Readiness Worksheet</a>: captures RPO/RTO targets, test evidence, and escalation contacts.</li>
+</ul>
+<h2 id="6-continuous-improvement">6. Continuous Improvement</h2>
+<ul>
+<li>Hold retrospectives after high-impact incidents or failed gates and record corrective actions within ten business days.</li>
+<li>Review control posture quarterly with Security and Internal Audit to confirm alignment with city directives.</li>
+<li>Track lead times, change success rate, backup compliance, logging coverage, and ownership coverage; share metrics with the CAB.</li>
+<li>Publish an annual modernization roadmap detailing priorities, resource needs, and risk-reduction initiatives.</li>
+<li>Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.</li>
+</ul>
+</main>
+</body>
+</html>

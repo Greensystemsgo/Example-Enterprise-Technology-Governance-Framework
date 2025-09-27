@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Directory Overview</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="active-directory-overview">Active Directory Overview</h1>
+<h2 id="1-mission">1. Mission</h2>
+<p>Safeguard the City's identity services by governing domain membership, account provisioning, and directory policies that underpin secure access to enterprise resources. This overview presents recommended best practices aligned with the Mayor's Executive Directive on cybersecurity and is not a formal policy.</p>
+<h2 id="2-core-outcomes">2. Core Outcomes</h2>
+<ul>
+<li>Identity Assurance: Enforce standards for account lifecycle, privileged access, and group policy configuration.</li>
+<li>Domain Hygiene: Maintain accurate organizational units, group structures, and automated controls that reduce manual effort.</li>
+<li>Lifecycle Compliance: Execute TSA/CIS/NIST-aligned audit policies for directory objects, ensuring every change is reviewable and traceable.</li>
+<li>Logging Coverage: Confirm domain controllers and identity-integrated services send security-relevant events to the central SIEM.</li>
+<li>Operational Insight: Provide metrics on join requests, provisioning lead times, audit findings, and exception status to stakeholders.</li>
+</ul>
+<h2 id="3-engagement-in-the-request-lifecycle">3. Engagement in the Request Lifecycle</h2>
+<ul>
+<li>Gate 0/1: Review ownership acknowledgements for account sponsorship, confirm directory prerequisites, and reject informal requests that bypass the centralized intake.</li>
+<li>Gate 2: Assess domain join requirements, group policy needs, and access design in collaboration with Infrastructure and Security.</li>
+<li>Gate 3: Validate licensing impacts for directory-integrated services and document recurring support considerations.</li>
+<li>Gate 4: Approve naming conventions, service accounts, and group assignments before implementation proceeds, verifying mandatory security tooling and SIEM logging requirements are met where applicable.</li>
+<li>Gate 5: Confirm directory updates were completed, CMDB attributes are refreshed, lifecycle reviews are scheduled, logging remains active, and ongoing maintenance is assigned.</li>
+<li>CAB participation: Active Directory provides identity and access management expertise to CAB for requests involving directory services or authentication changes.</li>
+<li>Required SME sign-offs: Active Directory provides recommendations and evidence for CAB decisions; teams may not self-approve every step.</li>
+<li>Separation of duties: Active Directory cannot approve their own requests; independent validation required from other teams.</li>
+</ul>
+<h2 id="4-collaboration-touchpoints">4. Collaboration Touchpoints</h2>
+<ul>
+<li>Service Desk: Provide provisioning guides and automated workflows for standardized account requests routed through the centralized system.</li>
+<li>Infrastructure: Align on image preparation, OU placement, service account management, and log forwarding requirements.</li>
+<li>Network Team: Coordinate on authentication dependencies such as site definitions, replication, network segmentation, and secure log transport.</li>
+<li>Security Team: Share audit results, privileged access reviews, exception requests, remediation actions, and SOC findings related to identity controls.</li>
+<li>Cloud services: Active Directory governs identity for SaaS, cloud services, and hybrid identity scenarios.</li>
+<li>Vendor oversight: Active Directory ensures identity lifecycle for third parties, including vendor account provisioning, access reviews, and deprovisioning; role in vendor/contractor oversight as relevant.</li>
+</ul>
+<h2 id="5-key-checklists-and-artifacts">5. Key Checklists and Artifacts</h2>
+<ul>
+<li><a href="../templates/ad/ad_account_provisioning_template.html">AD Account Provisioning Template</a>: captures justification, owner approval, access scope, and logging requirements for service accounts.</li>
+<li><a href="../templates/ad/ad_domain_join_checklist.html">AD Domain Join Checklist</a>: covers naming, OU placement, policy linkage, and SIEM onboarding steps.</li>
+<li><a href="../templates/ad/ad_group_policy_change_log.html">AD Group Policy Change Log</a>: summarizes updates, testing evidence, deployment timing, and logging implications.</li>
+<li><a href="../templates/ad/ad_privileged_access_review_schedule.html">AD Privileged Access Review Schedule</a>: documents frequency, participants, reporting requirements, and centralized exception tracking.</li>
+</ul>
+<h2 id="6-continuous-improvement">6. Continuous Improvement</h2>
+<ul>
+<li>Conduct regular policy reviews to incorporate updated cybersecurity directives, logging standards, and emerging threats.</li>
+<li>Automate repetitive provisioning steps and integrate approvals with the request system where feasible.</li>
+<li>Track service-level targets for account provisioning, domain join turnarounds, logging coverage, and report to the CAB.</li>
+<li>Host quarterly knowledge sessions with stakeholder teams to explain standards, changes, audit results, logging mandates, and lifecycle review findings.</li>
+<li>Tie continuous improvement activities to CAB feedback, annual framework refresh, and metrics reporting to the Governance Council/CAB.</li>
+</ul>
+</main>
+</body>
+</html>

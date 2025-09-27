@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gates Quick Reference</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="gates-quick-reference">Gates Quick Reference</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Use this sheet to establish at a glance which approvals and artifacts are expected at each gate. It supports the best-practice workflow described in <code>framework_overview.md</code> and can be linked directly from request forms or dashboards.</p>
+<h2 id="gate-summary">Gate Summary</h2>
+<ul>
+<li>Gate 0 - Business Need Intake</li>
+<li>Focus: capture business justification, funding, and ownership commitment via the centralized request solution.</li>
+<li>Artifacts: intake form, ownership acknowledgement, initial attachments.</li>
+<li>Primary Owner: Service Desk.</li>
+<li>Separation of duties: Service Desk cannot approve their own requests; independent validation required.</li>
+<li>Business justification: Must articulate mission/outcome/value; "tech debt" alone is insufficient unless debt remediation is fully scoped and risk-ranked with clear outcomes.</li>
+<li>
+<p>Suggested SLA: Triage within 2 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 1 - Impact &amp; Ownership Confirmation</p>
+</li>
+<li>Focus: confirm capacity, classify data, and ensure every asset has named owners.</li>
+<li>Artifacts: ownership matrix, impact checklist, prerequisite tracker, asset type declaration (workstation/server/other), ownership model selection (Infrastructure-managed or Requestor-managed).</li>
+<li>Notes: All directory object requests (create, modify, disable, delete) must flow through centralized intake so lifecycle reviews remain audit-ready. Workstation requests route through the Service Desk by default; server engagement is determined by the ownership model confirmed at Gate 1.</li>
+<li>Primary Owners: Service Desk coordination with Infrastructure, AD, Network, Security reviewers.</li>
+<li>Separation of duties: Teams cannot approve their own work without independent validation from another team.</li>
+<li>CAB checkpoints: High-risk or high-impact requests require CAB review.</li>
+<li>Cloud workloads: Shared-responsibility mapping required.</li>
+<li>Vendor milestones: Vendor onboarding preparation required.</li>
+<li>
+<p>Suggested SLA: Impact assessment within 5 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 2 - Technical &amp; Security Review</p>
+</li>
+<li>Focus: finalize architecture, security controls, and risk posture.</li>
+<li>Artifacts: design packet, hardening checklist, security review, exception log.</li>
+<li>Notes: Security highlights vulnerability management gaps; unresolved gaps require remediation or a formal exception.</li>
+<li>Primary Owners: Infrastructure, Network, Security.</li>
+<li>SIEM evidence: All technical designs must include logging and monitoring requirements with SIEM integration.</li>
+<li>CAB checkpoints: Technical decisions requiring exception approval must be reviewed by CAB.</li>
+<li>Cloud readiness: Cloud readiness validation required.</li>
+<li>
+<p>Suggested SLA: Technical review within 7 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 3 - Financial &amp; Procurement Approval</p>
+</li>
+<li>Focus: validate spend, vendor assurances, and contract alignment.</li>
+<li>Artifacts: bill of materials, quotes, funding authorization, vendor attestations.</li>
+<li>Primary Owners: Procurement lead with Security for vendor risk input.</li>
+<li>Vendor milestones: All vendor relationships must include security attestations and compliance documentation.</li>
+<li>CAB checkpoints: Vendor contracts exceeding standard thresholds require CAB review.</li>
+<li>
+<p>Suggested SLA: Procurement review within 3 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 4 - Implementation Readiness</p>
+</li>
+<li>Focus: confirm build prerequisites, testing, change planning, and communications.</li>
+<li>Artifacts: implementation checklist, test summary, change record, communication plan, confirmation that mandatory security tooling and SIEM logging are configured.</li>
+<li>Primary Owners: Infrastructure with sign-offs from AD, Network, Security, Service Desk.</li>
+<li>SIEM evidence: Monitoring handoffs and post-change validation requirements.</li>
+<li>Cloud readiness: Cloud deployments must demonstrate proper configuration management and monitoring setup.</li>
+<li>CAB checkpoints: Emergency implementations require CAB oversight.</li>
+<li>
+<p>Suggested SLA: Readiness confirmation within 2 business days (requires CAB review if repeatedly missed).</p>
+</li>
+<li>
+<p>Gate 5 - Post-Implementation Verification</p>
+</li>
+<li>Focus: validate outcomes, update inventories, and close outstanding work.</li>
+<li>Artifacts: validation report, monitoring handoff, CMDB update, training confirmation, audit evidence uploaded.</li>
+<li>Primary Owners: Service Owner with Infrastructure and Security verification.</li>
+<li>SIEM evidence: Post-change validation and ongoing monitoring confirmation.</li>
+<li>CAB checkpoints: Emergency changes must complete verification within two business days with CAB review.</li>
+<li>Suggested SLA: Verification completion within 3 business days (requires CAB review if repeatedly missed).</li>
+</ul>
+<h2 id="emergency-standard-changes">Emergency &amp; Standard Changes</h2>
+<ul>
+<li>All changes require documentation, CAB oversight, and retro review within two business days for emergencies.</li>
+<li>Emergency changes move rapidly but must satisfy the same artifacts within two business days after implementation.</li>
+<li>Emergency changes require CAB review within two business days with complete evidence package and retroactive approval.</li>
+</ul>
+<h2 id="escalation-notes">Escalation Notes</h2>
+<ul>
+<li>Any gate can trigger escalation to the Change Advisory Board (CAB) when requirements cannot be met or risks require leadership acceptance.</li>
+</ul>
+<h2 id="linking-guidance">Linking Guidance</h2>
+<p>Reference the gate-specific templates in <code>templates/gates/</code> when embedding links in forms or workflow tools.</p>
+</main>
+</body>
+</html>
