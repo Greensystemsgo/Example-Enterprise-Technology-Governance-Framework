@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change Taxonomy And Catalog</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="change-taxonomy-and-catalog">Change Taxonomy and Catalog</h1>
+<h2 id="change-types">Change Types</h2>
+<h3 id="normal-changes">Normal Changes</h3>
+<ul>
+<li><strong>Definition:</strong> Standard requests following full gate process with CAB approval</li>
+<li><strong>Characteristics:</strong> Standard business hours, full documentation, complete gate process</li>
+<li><strong>Approval Path:</strong> Full gate process (Gate 0-5) with CAB approval</li>
+<li><strong>Documentation:</strong> Complete documentation package with all required artifacts</li>
+<li><strong>Timeline:</strong> Standard processing time based on gate SLAs</li>
+<li><strong>Examples:</strong> New system deployments, major upgrades, new service implementations</li>
+</ul>
+<h3 id="major-changes">Major Changes</h3>
+<ul>
+<li><strong>Definition:</strong> High-impact changes requiring additional review and approval</li>
+<li><strong>Characteristics:</strong> Significant business impact, resource requirements, risk exposure</li>
+<li><strong>Approval Path:</strong> Full gate process with additional CAB review and executive approval</li>
+<li><strong>Documentation:</strong> Enhanced documentation with detailed impact assessment and risk analysis</li>
+<li><strong>Timeline:</strong> Extended processing time with additional review cycles</li>
+<li><strong>Examples:</strong> Infrastructure migrations, security system overhauls, major vendor changes</li>
+</ul>
+<h3 id="standard-changes">Standard Changes</h3>
+<ul>
+<li><strong>Definition:</strong> Pre-approved, low-risk changes with streamlined approval</li>
+<li><strong>Characteristics:</strong> Low risk, routine operations, pre-approved procedures</li>
+<li><strong>Approval Path:</strong> Streamlined approval with periodic CAB review</li>
+<li><strong>Documentation:</strong> Standardized documentation with pre-approved templates</li>
+<li><strong>Timeline:</strong> Accelerated processing with reduced gate requirements</li>
+<li><strong>Examples:</strong> Routine maintenance, standard deployments, pre-approved configurations</li>
+</ul>
+<h3 id="emergency-changes">Emergency Changes</h3>
+<ul>
+<li><strong>Definition:</strong> Urgent changes with retroactive CAB review within two business days</li>
+<li><strong>Characteristics:</strong> Urgent business need, immediate implementation required</li>
+<li><strong>Approval Path:</strong> Expedited approval with retroactive CAB review</li>
+<li><strong>Documentation:</strong> Post-implementation documentation with complete evidence package</li>
+<li><strong>Timeline:</strong> Immediate implementation with retroactive review</li>
+<li><strong>Examples:</strong> Security patches, critical system fixes, emergency configurations</li>
+</ul>
+<h2 id="standard-change-catalog">Standard Change Catalog</h2>
+<h3 id="system-imaging-and-deployment">System Imaging and Deployment</h3>
+<ul>
+<li><strong>Change Type:</strong> Standard Change</li>
+<li><strong>Description:</strong> Deployment of pre-approved system images to new or existing hardware</li>
+<li><strong>Risk Level:</strong> Low</li>
+<li><strong>Approval Requirements:</strong> Infrastructure team approval with CAB oversight</li>
+<li><strong>Documentation:</strong> Standard deployment checklist and validation report</li>
+<li><strong>Frequency:</strong> As needed for new deployments and refreshes</li>
+<li><strong>Review Schedule:</strong> Annual review of image standards and deployment procedures</li>
+</ul>
+<h3 id="certificate-renewals">Certificate Renewals</h3>
+<ul>
+<li><strong>Change Type:</strong> Standard Change</li>
+<li><strong>Description:</strong> Renewal of SSL/TLS certificates and digital certificates</li>
+<li><strong>Risk Level:</strong> Low</li>
+<li><strong>Approval Requirements:</strong> Security team approval with automated validation</li>
+<li><strong>Documentation:</strong> Certificate renewal log and validation report</li>
+<li><strong>Frequency:</strong> Based on certificate expiration schedule</li>
+<li><strong>Review Schedule:</strong> Annual review of certificate management procedures</li>
+</ul>
+<h3 id="firewall-rule-renewals">Firewall Rule Renewals</h3>
+<ul>
+<li><strong>Change Type:</strong> Standard Change</li>
+<li><strong>Description:</strong> Renewal of existing firewall rules with no modifications</li>
+<li><strong>Risk Level:</strong> Low</li>
+<li><strong>Approval Requirements:</strong> Network team approval with security validation</li>
+<li><strong>Documentation:</strong> Firewall rule renewal log and validation report</li>
+<li><strong>Frequency:</strong> Based on rule expiration schedule</li>
+<li><strong>Review Schedule:</strong> Annual review of firewall rule management procedures</li>
+</ul>
+<h3 id="monthly-patch-windows">Monthly Patch Windows</h3>
+<ul>
+<li><strong>Change Type:</strong> Standard Change</li>
+<li><strong>Description:</strong> Application of pre-approved security patches during scheduled maintenance windows</li>
+<li><strong>Risk Level:</strong> Low</li>
+<li><strong>Approval Requirements:</strong> Infrastructure team approval with security validation</li>
+<li><strong>Documentation:</strong> Patch deployment log and validation report</li>
+<li><strong>Frequency:</strong> Monthly during scheduled maintenance windows</li>
+<li><strong>Review Schedule:</strong> Annual review of patch management procedures</li>
+</ul>
+<h3 id="user-account-provisioning">User Account Provisioning</h3>
+<ul>
+<li><strong>Change Type:</strong> Standard Change</li>
+<li><strong>Description:</strong> Creation of new user accounts following standard procedures</li>
+<li><strong>Risk Level:</strong> Low</li>
+<li><strong>Approval Requirements:</strong> Service Desk approval with manager authorization</li>
+<li><strong>Documentation:</strong> Account creation log and validation report</li>
+<li><strong>Frequency:</strong> As needed for new employees and contractors</li>
+<li><strong>Review Schedule:</strong> Annual review of account provisioning procedures</li>
+</ul>
+<h3 id="backup-operations">Backup Operations</h3>
+<ul>
+<li><strong>Change Type:</strong> Standard Change</li>
+<li><strong>Description:</strong> Routine backup operations and backup verification</li>
+<li><strong>Risk Level:</strong> Low</li>
+<li><strong>Approval Requirements:</strong> Infrastructure team approval with automated validation</li>
+<li><strong>Documentation:</strong> Backup operation log and validation report</li>
+<li><strong>Frequency:</strong> Daily/weekly based on backup schedule</li>
+<li><strong>Review Schedule:</strong> Annual review of backup procedures and schedules</li>
+</ul>
+<h2 id="change-criteria-and-approval-paths">Change Criteria and Approval Paths</h2>
+<h3 id="normal-change-criteria">Normal Change Criteria</h3>
+<ul>
+<li><strong>Business Impact:</strong> Standard business impact</li>
+<li><strong>Risk Level:</strong> Standard risk level</li>
+<li><strong>Resource Requirements:</strong> Standard resource requirements</li>
+<li><strong>Timeline:</strong> Standard processing timeline</li>
+<li><strong>Approval Path:</strong> Full gate process with CAB approval</li>
+</ul>
+<h3 id="major-change-criteria">Major Change Criteria</h3>
+<ul>
+<li><strong>Business Impact:</strong> High business impact</li>
+<li><strong>Risk Level:</strong> High risk level</li>
+<li><strong>Resource Requirements:</strong> Significant resource requirements</li>
+<li><strong>Timeline:</strong> Extended processing timeline</li>
+<li><strong>Approval Path:</strong> Full gate process with additional CAB review and executive approval</li>
+</ul>
+<h3 id="standard-change-criteria">Standard Change Criteria</h3>
+<ul>
+<li><strong>Business Impact:</strong> Low business impact</li>
+<li><strong>Risk Level:</strong> Low risk level</li>
+<li><strong>Resource Requirements:</strong> Minimal resource requirements</li>
+<li><strong>Timeline:</strong> Accelerated processing timeline</li>
+<li><strong>Approval Path:</strong> Streamlined approval with periodic CAB review</li>
+</ul>
+<h3 id="emergency-change-criteria">Emergency Change Criteria</h3>
+<ul>
+<li><strong>Business Impact:</strong> Urgent business need</li>
+<li><strong>Risk Level:</strong> Variable risk level</li>
+<li><strong>Resource Requirements:</strong> Immediate resource availability</li>
+<li><strong>Timeline:</strong> Immediate implementation</li>
+<li><strong>Approval Path:</strong> Expedited approval with retroactive CAB review</li>
+</ul>
+<h2 id="annual-catalog-review">Annual Catalog Review</h2>
+<h3 id="review-process">Review Process</h3>
+<ul>
+<li><strong>Frequency:</strong> Annual review of standard change catalog</li>
+<li><strong>Participants:</strong> CAB, technical teams, process owners</li>
+<li><strong>Scope:</strong> All standard changes, approval criteria, documentation requirements</li>
+<li><strong>Outcomes:</strong> Updated catalog, revised procedures, training materials</li>
+</ul>
+<h3 id="review-criteria">Review Criteria</h3>
+<ul>
+<li><strong>Risk Assessment:</strong> Review risk levels and approval requirements</li>
+<li><strong>Process Efficiency:</strong> Assess process efficiency and improvement opportunities</li>
+<li><strong>Compliance Validation:</strong> Validate compliance with governance requirements</li>
+<li><strong>Training Needs:</strong> Identify training needs and update training materials</li>
+</ul>
+<h3 id="catalog-updates">Catalog Updates</h3>
+<ul>
+<li><strong>New Standard Changes:</strong> Add new standard changes based on operational needs</li>
+<li><strong>Modified Changes:</strong> Update existing standard changes based on lessons learned</li>
+<li><strong>Retired Changes:</strong> Remove obsolete standard changes</li>
+<li><strong>Documentation Updates:</strong> Update documentation and training materials</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-integration">Gate Integration</h3>
+<ul>
+<li><strong>Gate 0:</strong> Change type classification required in business justification</li>
+<li><strong>Gate 1:</strong> Impact assessment includes change type validation</li>
+<li><strong>Gate 2:</strong> Technical review considers change type requirements</li>
+<li><strong>Gate 3:</strong> Procurement considers change type implications</li>
+<li><strong>Gate 4:</strong> Implementation follows change type procedures</li>
+<li><strong>Gate 5:</strong> Verification includes change type compliance validation</li>
+</ul>
+<h3 id="cab-oversight">CAB Oversight</h3>
+<ul>
+<li><strong>Standard Change Approval:</strong> CAB approves standard change catalog and procedures</li>
+<li><strong>Periodic Review:</strong> CAB conducts periodic review of standard changes</li>
+<li><strong>Risk Assessment:</strong> CAB validates risk levels and approval requirements</li>
+<li><strong>Process Improvement:</strong> CAB drives process improvement and efficiency gains</li>
+</ul>
+</main>
+</body>
+</html>

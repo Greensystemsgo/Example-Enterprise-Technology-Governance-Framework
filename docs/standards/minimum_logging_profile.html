@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimum Logging Profile</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="minimum-logging-profile">Minimum Logging Profile</h1>
+<h2 id="required-log-sources">Required Log Sources</h2>
+<h3 id="identity-and-access-management">Identity and Access Management</h3>
+<ul>
+<li><strong>Authentication Events:</strong> Login attempts, successful/failed authentications, session management</li>
+<li><strong>Authorization Events:</strong> Permission changes, access grants/revocations, privilege escalations</li>
+<li><strong>Account Management:</strong> Account creation, modification, deletion, password changes</li>
+<li><strong>Directory Services:</strong> Active Directory changes, group membership modifications, policy updates</li>
+<li><strong>Multi-Factor Authentication:</strong> MFA enrollment, authentication attempts, bypass events</li>
+</ul>
+<h3 id="endpoint-security">Endpoint Security</h3>
+<ul>
+<li><strong>System Events:</strong> System startup/shutdown, service starts/stops, configuration changes</li>
+<li><strong>File System Events:</strong> File access, modification, deletion, permission changes</li>
+<li><strong>Process Events:</strong> Process creation, termination, privilege escalation attempts</li>
+<li><strong>Network Events:</strong> Network connections, DNS queries, port scans</li>
+<li><strong>Security Events:</strong> Antivirus alerts, firewall blocks, intrusion detection events</li>
+</ul>
+<h3 id="network-infrastructure">Network Infrastructure</h3>
+<ul>
+<li><strong>Firewall Logs:</strong> Allowed/denied connections, rule changes, policy updates</li>
+<li><strong>Router/Switch Logs:</strong> Configuration changes, interface status, routing updates</li>
+<li><strong>VPN Logs:</strong> Connection attempts, successful/failed connections, user activity</li>
+<li><strong>Load Balancer Logs:</strong> Traffic distribution, health checks, configuration changes</li>
+<li><strong>DNS Logs:</strong> Query logs, zone transfers, configuration changes</li>
+</ul>
+<h3 id="cloud-control-plane">Cloud Control Plane</h3>
+<ul>
+<li><strong>API Calls:</strong> All API requests, responses, and errors</li>
+<li><strong>Configuration Changes:</strong> Resource provisioning, modification, deletion</li>
+<li><strong>Access Events:</strong> Console logins, API key usage, service account activity</li>
+<li><strong>Resource Events:</strong> VM creation/deletion, storage changes, network modifications</li>
+<li><strong>Security Events:</strong> Security group changes, IAM policy updates, compliance violations</li>
+</ul>
+<h3 id="critical-applications">Critical Applications</h3>
+<ul>
+<li><strong>Application Logs:</strong> Error logs, access logs, transaction logs</li>
+<li><strong>Database Logs:</strong> Query logs, connection logs, administrative actions</li>
+<li><strong>Web Server Logs:</strong> Access logs, error logs, security events</li>
+<li><strong>Email Logs:</strong> Message flow, spam filtering, policy violations</li>
+<li><strong>Backup Logs:</strong> Backup success/failure, restore operations, retention events</li>
+</ul>
+<h2 id="retention-targets">Retention Targets</h2>
+<h3 id="standard-retention">Standard Retention</h3>
+<ul>
+<li><strong>Operational Logs:</strong> 90 days minimum retention</li>
+<li><strong>Security Logs:</strong> 1 year minimum retention</li>
+<li><strong>Audit Logs:</strong> 7 years minimum retention (or per regulatory requirement)</li>
+<li><strong>Compliance Logs:</strong> Per regulatory requirement (typically 3-7 years)</li>
+</ul>
+<h3 id="extended-retention">Extended Retention</h3>
+<ul>
+<li><strong>Critical Systems:</strong> Extended retention based on business requirements</li>
+<li><strong>Regulatory Systems:</strong> Retention per applicable regulations</li>
+<li><strong>Legal Hold:</strong> Extended retention for legal proceedings</li>
+<li><strong>Forensic Requirements:</strong> Extended retention for incident investigation</li>
+</ul>
+<h2 id="verification-steps">Verification Steps</h2>
+<h3 id="log-collection-verification">Log Collection Verification</h3>
+<ul>
+<li><strong>Source Validation:</strong> Confirm all required log sources are configured and sending logs</li>
+<li><strong>Format Validation:</strong> Verify log format consistency and required fields</li>
+<li><strong>Timing Validation:</strong> Confirm log timestamps are accurate and synchronized</li>
+<li><strong>Completeness Validation:</strong> Verify no log gaps or missing events</li>
+</ul>
+<h3 id="log-quality-checks">Log Quality Checks</h3>
+<ul>
+<li><strong>Data Integrity:</strong> Verify log data integrity and tamper detection</li>
+<li><strong>Field Validation:</strong> Confirm required fields are present and properly formatted</li>
+<li><strong>Correlation Validation:</strong> Verify logs can be correlated across systems</li>
+<li><strong>Search Validation:</strong> Confirm logs are searchable and retrievable</li>
+</ul>
+<h3 id="retention-verification">Retention Verification</h3>
+<ul>
+<li><strong>Retention Policy Compliance:</strong> Verify logs are retained per policy requirements</li>
+<li><strong>Archival Validation:</strong> Confirm logs are properly archived and retrievable</li>
+<li><strong>Disposal Validation:</strong> Verify logs are properly disposed of after retention period</li>
+<li><strong>Legal Hold Validation:</strong> Confirm legal hold requirements are properly implemented</li>
+</ul>
+<h2 id="owner-responsibilities">Owner Responsibilities</h2>
+<h3 id="security-team">Security Team</h3>
+<ul>
+<li><strong>Primary Owner:</strong> Security team owns overall logging strategy and requirements</li>
+<li><strong>Responsibilities:</strong> Define logging requirements, validate log quality, monitor compliance</li>
+<li><strong>Accountability:</strong> Ensure all systems meet minimum logging profile requirements</li>
+</ul>
+<h3 id="infrastructure-team">Infrastructure Team</h3>
+<ul>
+<li><strong>Implementation Owner:</strong> Infrastructure team implements logging infrastructure</li>
+<li><strong>Responsibilities:</strong> Deploy logging agents, configure log forwarding, maintain logging systems</li>
+<li><strong>Accountability:</strong> Ensure logging infrastructure is operational and performing</li>
+</ul>
+<h3 id="application-teams">Application Teams</h3>
+<ul>
+<li><strong>Application Owner:</strong> Application teams implement application-specific logging</li>
+<li><strong>Responsibilities:</strong> Configure application logging, ensure log quality, maintain logging code</li>
+<li><strong>Accountability:</strong> Ensure applications meet logging requirements and standards</li>
+</ul>
+<h3 id="network-team">Network Team</h3>
+<ul>
+<li><strong>Network Owner:</strong> Network team implements network infrastructure logging</li>
+<li><strong>Responsibilities:</strong> Configure network device logging, ensure log forwarding, maintain logging infrastructure</li>
+<li><strong>Accountability:</strong> Ensure network infrastructure meets logging requirements</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-integration">Gate Integration</h3>
+<ul>
+<li><strong>Gate 2:</strong> Technical designs must include logging requirements and SIEM integration</li>
+<li><strong>Gate 4:</strong> Implementation must verify logging configuration and SIEM integration</li>
+<li><strong>Gate 5:</strong> Post-implementation verification must confirm ongoing logging and monitoring</li>
+</ul>
+<h3 id="compliance-requirements">Compliance Requirements</h3>
+<ul>
+<li><strong>Audit Support:</strong> Logs must support audit requirements and compliance validation</li>
+<li><strong>Incident Response:</strong> Logs must support incident investigation and forensic analysis</li>
+<li><strong>Regulatory Compliance:</strong> Logs must meet regulatory requirements for retention and accessibility</li>
+<li><strong>Legal Hold:</strong> Logs must support legal hold requirements and e-discovery processes</li>
+</ul>
+<h3 id="monitoring-and-alerting">Monitoring and Alerting</h3>
+<ul>
+<li><strong>Log Monitoring:</strong> Continuous monitoring of log collection and quality</li>
+<li><strong>Alert Configuration:</strong> Alerts for log collection failures and quality issues</li>
+<li><strong>Dashboard Reporting:</strong> Regular reporting on logging compliance and coverage</li>
+<li><strong>Incident Integration:</strong> Logs integrated with incident response and security operations</li>
+</ul>
+</main>
+</body>
+</html>

@@ -67,7 +67,8 @@ ul.page-list li {
 <li>Artifacts: intake form, ownership acknowledgement, initial attachments.</li>
 <li>Primary Owner: Service Desk.</li>
 <li>Separation of duties: Service Desk cannot approve their own requests; independent validation required.</li>
-<li>Business justification: Must articulate mission/outcome/value; "tech debt" alone is insufficient unless debt remediation is fully scoped and risk-ranked with clear outcomes.</li>
+<li>Business justification: Must articulate mission/outcome/value or risk reduction; "tech debt" only acceptable if fully scoped with risk impact assessment and clear remediation outcomes.</li>
+<li>Change types: Normal, Major, Standard, Emergency changes all follow formal intake process.</li>
 <li>
 <p>Suggested SLA: Triage within 2 business days (requires CAB review if repeatedly missed).</p>
 </li>
@@ -80,7 +81,9 @@ ul.page-list li {
 <li>Primary Owners: Service Desk coordination with Infrastructure, AD, Network, Security reviewers.</li>
 <li>Separation of duties: Teams cannot approve their own work without independent validation from another team.</li>
 <li>CAB checkpoints: High-risk or high-impact requests require CAB review.</li>
-<li>Cloud workloads: Shared-responsibility mapping required.</li>
+<li>Data classification touchpoints: Reference Data Classification Matrix and include appropriate handling requirements.</li>
+<li>Accessibility/privacy checks: WCAG 2.1 AA compliance validation and privacy impact assessment for citizen-facing systems.</li>
+<li>Cloud workloads: Cloud shared-responsibility mapping required.</li>
 <li>Vendor milestones: Vendor onboarding preparation required.</li>
 <li>
 <p>Suggested SLA: Impact assessment within 5 business days (requires CAB review if repeatedly missed).</p>
@@ -92,7 +95,10 @@ ul.page-list li {
 <li>Artifacts: design packet, hardening checklist, security review, exception log.</li>
 <li>Notes: Security highlights vulnerability management gaps; unresolved gaps require remediation or a formal exception.</li>
 <li>Primary Owners: Infrastructure, Network, Security.</li>
-<li>SIEM evidence: All technical designs must include logging and monitoring requirements with SIEM integration.</li>
+<li>Data classification validation: Technical designs must align with data classification requirements and handling procedures.</li>
+<li>Accessibility/privacy validation: WCAG 2.1 AA compliance verification and privacy impact assessment completion required.</li>
+<li>SIEM evidence: All technical designs must include logging and monitoring requirements with minimum logging profile verification.</li>
+<li>Risk scoring: Qualitative risk assessment using risk scoring method with CAB escalation thresholds.</li>
 <li>CAB checkpoints: Technical decisions requiring exception approval must be reviewed by CAB.</li>
 <li>Cloud readiness: Cloud readiness validation required.</li>
 <li>
@@ -104,7 +110,8 @@ ul.page-list li {
 <li>Focus: validate spend, vendor assurances, and contract alignment.</li>
 <li>Artifacts: bill of materials, quotes, funding authorization, vendor attestations.</li>
 <li>Primary Owners: Procurement lead with Security for vendor risk input.</li>
-<li>Vendor milestones: All vendor relationships must include security attestations and compliance documentation.</li>
+<li>Vendor due diligence: SOC 2 Type II or equivalent attestation, SIG-Lite questionnaire completion, breach notification SLA documentation, data location disclosure required.</li>
+<li>Vendor milestones: All vendor relationships must include security attestations and compliance documentation using vendor due diligence checklist.</li>
 <li>CAB checkpoints: Vendor contracts exceeding standard thresholds require CAB review.</li>
 <li>
 <p>Suggested SLA: Procurement review within 3 business days (requires CAB review if repeatedly missed).</p>
@@ -115,6 +122,8 @@ ul.page-list li {
 <li>Focus: confirm build prerequisites, testing, change planning, and communications.</li>
 <li>Artifacts: implementation checklist, test summary, change record, communication plan, confirmation that mandatory security tooling and SIEM logging are configured.</li>
 <li>Primary Owners: Infrastructure with sign-offs from AD, Network, Security, Service Desk.</li>
+<li>Logging profile verification: All systems must meet minimum logging profile requirements with retention and verification confirmation.</li>
+<li>Service tiering checks: RTO/RPO validation, patch/vulnerability management SLA confirmation, backup and recovery testing completion.</li>
 <li>SIEM evidence: Monitoring handoffs and post-change validation requirements.</li>
 <li>Cloud readiness: Cloud deployments must demonstrate proper configuration management and monitoring setup.</li>
 <li>CAB checkpoints: Emergency implementations require CAB oversight.</li>
@@ -127,6 +136,8 @@ ul.page-list li {
 <li>Focus: validate outcomes, update inventories, and close outstanding work.</li>
 <li>Artifacts: validation report, monitoring handoff, CMDB update, training confirmation, audit evidence uploaded.</li>
 <li>Primary Owners: Service Owner with Infrastructure and Security verification.</li>
+<li>Risk register updates: All identified risks must be documented in risk register template with mitigation status and review dates.</li>
+<li>Legal-hold confirmation: Data retention and legal-hold requirements must be documented and confirmed for applicable systems.</li>
 <li>SIEM evidence: Post-change validation and ongoing monitoring confirmation.</li>
 <li>CAB checkpoints: Emergency changes must complete verification within two business days with CAB review.</li>
 <li>Suggested SLA: Verification completion within 3 business days (requires CAB review if repeatedly missed).</li>
@@ -136,6 +147,11 @@ ul.page-list li {
 <li>All changes require documentation, CAB oversight, and retro review within two business days for emergencies.</li>
 <li>Emergency changes move rapidly but must satisfy the same artifacts within two business days after implementation.</li>
 <li>Emergency changes require CAB review within two business days with complete evidence package and retroactive approval.</li>
+<li>Standard change catalog requires annual review and CAB oversight for pre-approved activities.</li>
+</ul>
+<h2 id="gate-raci-reference">Gate RACI Reference</h2>
+<ul>
+<li>For detailed responsibility and accountability matrices across all gates, see the Gate RACI Reference which outlines Responsible, Accountable, Consulted, and Informed roles for each gate artifact.</li>
 </ul>
 <h2 id="escalation-notes">Escalation Notes</h2>
 <ul>

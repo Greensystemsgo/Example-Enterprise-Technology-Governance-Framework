@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Classification Matrix</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="data-classification-matrix">Data Classification Matrix</h1>
+<h2 id="classification-levels">Classification Levels</h2>
+<h3 id="public">Public</h3>
+<ul>
+<li><strong>Definition:</strong> Information that can be freely shared with the public without restrictions</li>
+<li><strong>Examples:</strong> Public announcements, marketing materials, publicly available reports</li>
+<li><strong>Handling Requirements:</strong></li>
+<li>No special handling restrictions</li>
+<li>Standard information security controls apply</li>
+<li>May be shared freely with external parties</li>
+<li><strong>Retention:</strong> Standard records management policies apply</li>
+<li><strong>Gate References:</strong> Gate 0-1: Basic classification, Gate 2: Standard security controls</li>
+</ul>
+<h3 id="internal">Internal</h3>
+<ul>
+<li><strong>Definition:</strong> Information intended for internal use only, not for public distribution</li>
+<li><strong>Examples:</strong> Internal policies, operational procedures, internal communications</li>
+<li><strong>Handling Requirements:</strong></li>
+<li>Access limited to authorized personnel</li>
+<li>Standard access controls and authentication required</li>
+<li>May be shared with authorized contractors and vendors with appropriate agreements</li>
+<li><strong>Retention:</strong> Standard records management policies with access controls</li>
+<li><strong>Gate References:</strong> Gate 1: Access control validation, Gate 2: Standard security controls</li>
+</ul>
+<h3 id="confidential">Confidential</h3>
+<ul>
+<li><strong>Definition:</strong> Sensitive information that could cause harm if disclosed to unauthorized parties</li>
+<li><strong>Examples:</strong> Personnel records, financial information, proprietary business data</li>
+<li><strong>Handling Requirements:</strong></li>
+<li>Access limited to authorized personnel with business need</li>
+<li>Strong authentication and access controls required</li>
+<li>Encryption required for storage and transmission</li>
+<li>Audit logging and monitoring required</li>
+<li>May be shared with authorized parties under strict confidentiality agreements</li>
+<li><strong>Retention:</strong> Enhanced retention policies with secure disposal requirements</li>
+<li><strong>Gate References:</strong> Gate 1: Enhanced access controls, Gate 2: Encryption and monitoring requirements, Gate 4: Secure handling validation</li>
+</ul>
+<h3 id="restricted">Restricted</h3>
+<ul>
+<li><strong>Definition:</strong> Highly sensitive information that could cause significant harm if disclosed</li>
+<li><strong>Examples:</strong> Personal identifiable information (PII), protected health information (PHI), law enforcement data</li>
+<li><strong>Handling Requirements:</strong></li>
+<li>Access limited to authorized personnel with documented business need</li>
+<li>Multi-factor authentication and strong access controls required</li>
+<li>Encryption required for all storage and transmission</li>
+<li>Comprehensive audit logging and monitoring required</li>
+<li>Special handling procedures and secure disposal required</li>
+<li>May only be shared with authorized parties under strict legal agreements</li>
+<li><strong>Retention:</strong> Specialized retention policies with legal hold capabilities and secure disposal</li>
+<li><strong>Gate References:</strong> Gate 1: Specialized access controls, Gate 2: Enhanced security requirements, Gate 3: Legal compliance validation, Gate 4: Secure handling verification, Gate 5: Legal hold confirmation</li>
+</ul>
+<h2 id="classification-process">Classification Process</h2>
+<h3 id="initial-classification">Initial Classification</h3>
+<ul>
+<li><strong>Gate 0:</strong> Business justification must include data classification assessment</li>
+<li><strong>Gate 1:</strong> Data sensitivity statement required with classification justification</li>
+<li><strong>Responsibility:</strong> Business owner with technical team validation</li>
+<li><strong>Documentation:</strong> Classification rationale and handling requirements documented</li>
+</ul>
+<h3 id="reclassification">Reclassification</h3>
+<ul>
+<li><strong>Triggers:</strong> Changes in data sensitivity, regulatory requirements, or business context</li>
+<li><strong>Process:</strong> Formal reclassification request with justification and impact assessment</li>
+<li><strong>Approval:</strong> CAB review required for reclassification decisions</li>
+<li><strong>Documentation:</strong> Reclassification rationale and updated handling requirements</li>
+</ul>
+<h3 id="classification-validation">Classification Validation</h3>
+<ul>
+<li><strong>Frequency:</strong> Annual review of data classifications</li>
+<li><strong>Process:</strong> Business owner review with technical team validation</li>
+<li><strong>Outcomes:</strong> Updated classifications, handling requirements, and training materials</li>
+</ul>
+<h2 id="handling-requirements-by-classification">Handling Requirements by Classification</h2>
+<h3 id="access-controls">Access Controls</h3>
+<ul>
+<li><strong>Public:</strong> Standard access controls</li>
+<li><strong>Internal:</strong> Role-based access controls with authentication</li>
+<li><strong>Confidential:</strong> Role-based access controls with strong authentication and business justification</li>
+<li><strong>Restricted:</strong> Role-based access controls with multi-factor authentication and documented business need</li>
+</ul>
+<h3 id="encryption-requirements">Encryption Requirements</h3>
+<ul>
+<li><strong>Public:</strong> Standard encryption for transmission</li>
+<li><strong>Internal:</strong> Encryption for transmission and storage</li>
+<li><strong>Confidential:</strong> Strong encryption for transmission and storage</li>
+<li><strong>Restricted:</strong> Strong encryption for transmission and storage with key management</li>
+</ul>
+<h3 id="audit-and-monitoring">Audit and Monitoring</h3>
+<ul>
+<li><strong>Public:</strong> Standard audit logging</li>
+<li><strong>Internal:</strong> Enhanced audit logging with access monitoring</li>
+<li><strong>Confidential:</strong> Comprehensive audit logging with access and usage monitoring</li>
+<li><strong>Restricted:</strong> Comprehensive audit logging with detailed access, usage, and modification monitoring</li>
+</ul>
+<h3 id="retention-and-disposal">Retention and Disposal</h3>
+<ul>
+<li><strong>Public:</strong> Standard retention and disposal</li>
+<li><strong>Internal:</strong> Standard retention with secure disposal</li>
+<li><strong>Confidential:</strong> Enhanced retention with secure disposal and audit trail</li>
+<li><strong>Restricted:</strong> Specialized retention with legal hold capabilities and secure disposal with audit trail</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-integration">Gate Integration</h3>
+<ul>
+<li><strong>Gate 0:</strong> Data classification assessment required in business justification</li>
+<li><strong>Gate 1:</strong> Data sensitivity statement and classification validation required</li>
+<li><strong>Gate 2:</strong> Security controls aligned with data classification requirements</li>
+<li><strong>Gate 3:</strong> Vendor agreements include data classification handling requirements</li>
+<li><strong>Gate 4:</strong> Implementation includes appropriate data handling controls</li>
+<li><strong>Gate 5:</strong> Verification includes data classification compliance validation</li>
+</ul>
+<h3 id="compliance-requirements">Compliance Requirements</h3>
+<ul>
+<li><strong>Regulatory Alignment:</strong> Classifications align with applicable regulations (CPRA, CJIS, GDPR, etc.)</li>
+<li><strong>Audit Requirements:</strong> Classification decisions and handling requirements documented for audit</li>
+<li><strong>Training Requirements:</strong> Personnel trained on data classification and handling requirements</li>
+<li><strong>Incident Response:</strong> Data classification informs incident response procedures and notification requirements</li>
+</ul>
+</main>
+</body>
+</html>

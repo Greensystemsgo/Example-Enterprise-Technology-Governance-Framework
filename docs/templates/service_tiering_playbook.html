@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Tiering Playbook</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="service-tiering-playbook">Service Tiering Playbook</h1>
+<h2 id="service-tier-definitions">Service Tier Definitions</h2>
+<h3 id="tier-0-critical-services">Tier 0 - Critical Services</h3>
+<ul>
+<li><strong>Definition:</strong> Mission-critical services that directly impact public safety, essential government functions, or critical infrastructure</li>
+<li><strong>Characteristics:</strong> 24/7 availability required, zero tolerance for downtime, immediate impact on public safety</li>
+<li><strong>Examples:</strong> Emergency services systems, critical infrastructure monitoring, public safety communications</li>
+<li><strong>RTO (Recovery Time Objective):</strong> 0-1 hour</li>
+<li><strong>RPO (Recovery Point Objective):</strong> 0-15 minutes</li>
+<li><strong>Availability Target:</strong> 99.99% (4.38 minutes downtime per month)</li>
+</ul>
+<h3 id="tier-1-essential-services">Tier 1 - Essential Services</h3>
+<ul>
+<li><strong>Definition:</strong> Essential services that support core government operations and citizen services</li>
+<li><strong>Characteristics:</strong> High availability required, minimal tolerance for downtime, significant impact on operations</li>
+<li><strong>Examples:</strong> Citizen service portals, financial systems, HR systems, email services</li>
+<li><strong>RTO (Recovery Time Objective):</strong> 1-4 hours</li>
+<li><strong>RPO (Recovery Point Objective):</strong> 15-60 minutes</li>
+<li><strong>Availability Target:</strong> 99.9% (43.8 minutes downtime per month)</li>
+</ul>
+<h3 id="tier-2-important-services">Tier 2 - Important Services</h3>
+<ul>
+<li><strong>Definition:</strong> Important services that support business operations and productivity</li>
+<li><strong>Characteristics:</strong> Standard availability required, moderate tolerance for downtime, moderate impact on operations</li>
+<li><strong>Examples:</strong> Document management systems, collaboration tools, reporting systems</li>
+<li><strong>RTO (Recovery Time Objective):</strong> 4-24 hours</li>
+<li><strong>RPO (Recovery Point Objective):</strong> 1-4 hours</li>
+<li><strong>Availability Target:</strong> 99.5% (3.65 hours downtime per month)</li>
+</ul>
+<h3 id="tier-3-standard-services">Tier 3 - Standard Services</h3>
+<ul>
+<li><strong>Definition:</strong> Standard services that support routine business operations</li>
+<li><strong>Characteristics:</strong> Standard availability required, higher tolerance for downtime, limited impact on operations</li>
+<li><strong>Examples:</strong> Development systems, testing environments, non-critical applications</li>
+<li><strong>RTO (Recovery Time Objective):</strong> 24-72 hours</li>
+<li><strong>RPO (Recovery Point Objective):</strong> 4-24 hours</li>
+<li><strong>Availability Target:</strong> 99.0% (7.3 hours downtime per month)</li>
+</ul>
+<h2 id="service-tiering-criteria">Service Tiering Criteria</h2>
+<h3 id="business-impact-assessment">Business Impact Assessment</h3>
+<ul>
+<li><strong>Public Safety Impact:</strong> Direct impact on public safety and emergency services</li>
+<li><strong>Citizen Service Impact:</strong> Impact on citizen services and government operations</li>
+<li><strong>Financial Impact:</strong> Financial impact of service unavailability</li>
+<li><strong>Operational Impact:</strong> Impact on internal operations and productivity</li>
+<li><strong>Regulatory Impact:</strong> Impact on regulatory compliance and reporting</li>
+</ul>
+<h3 id="technical-requirements">Technical Requirements</h3>
+<ul>
+<li><strong>Availability Requirements:</strong> Required availability and uptime targets</li>
+<li><strong>Performance Requirements:</strong> Required performance and response time targets</li>
+<li><strong>Scalability Requirements:</strong> Required scalability and capacity targets</li>
+<li><strong>Security Requirements:</strong> Required security controls and compliance</li>
+<li><strong>Integration Requirements:</strong> Required integration with other systems</li>
+</ul>
+<h3 id="resource-requirements">Resource Requirements</h3>
+<ul>
+<li><strong>Infrastructure Requirements:</strong> Required infrastructure and platform resources</li>
+<li><strong>Personnel Requirements:</strong> Required personnel and expertise</li>
+<li><strong>Budget Requirements:</strong> Required budget and cost considerations</li>
+<li><strong>Timeline Requirements:</strong> Required implementation and maintenance timelines</li>
+<li><strong>Support Requirements:</strong> Required support and maintenance resources</li>
+</ul>
+<h2 id="rtorpo-requirements-by-tier">RTO/RPO Requirements by Tier</h2>
+<h3 id="tier-0-critical-services_1">Tier 0 - Critical Services</h3>
+<ul>
+<li><strong>RTO:</strong> 0-1 hour</li>
+<li><strong>RPO:</strong> 0-15 minutes</li>
+<li><strong>Backup Frequency:</strong> Continuous or every 15 minutes</li>
+<li><strong>Recovery Testing:</strong> Monthly</li>
+<li><strong>Monitoring:</strong> 24/7 real-time monitoring</li>
+<li><strong>Support:</strong> 24/7 dedicated support</li>
+</ul>
+<h3 id="tier-1-essential-services_1">Tier 1 - Essential Services</h3>
+<ul>
+<li><strong>RTO:</strong> 1-4 hours</li>
+<li><strong>RPO:</strong> 15-60 minutes</li>
+<li><strong>Backup Frequency:</strong> Every hour</li>
+<li><strong>Recovery Testing:</strong> Quarterly</li>
+<li><strong>Monitoring:</strong> 24/7 monitoring with alerts</li>
+<li><strong>Support:</strong> Business hours with on-call support</li>
+</ul>
+<h3 id="tier-2-important-services_1">Tier 2 - Important Services</h3>
+<ul>
+<li><strong>RTO:</strong> 4-24 hours</li>
+<li><strong>RPO:</strong> 1-4 hours</li>
+<li><strong>Backup Frequency:</strong> Every 4 hours</li>
+<li><strong>Recovery Testing:</strong> Semi-annually</li>
+<li><strong>Monitoring:</strong> Business hours monitoring</li>
+<li><strong>Support:</strong> Business hours support</li>
+</ul>
+<h3 id="tier-3-standard-services_1">Tier 3 - Standard Services</h3>
+<ul>
+<li><strong>RTO:</strong> 24-72 hours</li>
+<li><strong>RPO:</strong> 4-24 hours</li>
+<li><strong>Backup Frequency:</strong> Daily</li>
+<li><strong>Recovery Testing:</strong> Annually</li>
+<li><strong>Monitoring:</strong> Standard monitoring</li>
+<li><strong>Support:</strong> Standard support</li>
+</ul>
+<h2 id="patch-and-vulnerability-management">Patch and Vulnerability Management</h2>
+<h3 id="tier-0-critical-services_2">Tier 0 - Critical Services</h3>
+<ul>
+<li><strong>Patch Cadence:</strong> Critical patches within 24 hours, standard patches within 7 days</li>
+<li><strong>Vulnerability Management:</strong> Immediate assessment and remediation of critical vulnerabilities</li>
+<li><strong>Testing Requirements:</strong> Comprehensive testing before patch deployment</li>
+<li><strong>Approval Process:</strong> CAB approval required for all patches</li>
+<li><strong>Rollback Plan:</strong> Immediate rollback capability required</li>
+</ul>
+<h3 id="tier-1-essential-services_2">Tier 1 - Essential Services</h3>
+<ul>
+<li><strong>Patch Cadence:</strong> Critical patches within 48 hours, standard patches within 14 days</li>
+<li><strong>Vulnerability Management:</strong> Rapid assessment and remediation of critical vulnerabilities</li>
+<li><strong>Testing Requirements:</strong> Standard testing before patch deployment</li>
+<li><strong>Approval Process:</strong> Technical team approval required for critical patches</li>
+<li><strong>Rollback Plan:</strong> Rollback capability required</li>
+</ul>
+<h3 id="tier-2-important-services_2">Tier 2 - Important Services</h3>
+<ul>
+<li><strong>Patch Cadence:</strong> Critical patches within 7 days, standard patches within 30 days</li>
+<li><strong>Vulnerability Management:</strong> Standard assessment and remediation of vulnerabilities</li>
+<li><strong>Testing Requirements:</strong> Basic testing before patch deployment</li>
+<li><strong>Approval Process:</strong> Standard approval process</li>
+<li><strong>Rollback Plan:</strong> Rollback capability recommended</li>
+</ul>
+<h3 id="tier-3-standard-services_2">Tier 3 - Standard Services</h3>
+<ul>
+<li><strong>Patch Cadence:</strong> Critical patches within 30 days, standard patches within 90 days</li>
+<li><strong>Vulnerability Management:</strong> Standard assessment and remediation of vulnerabilities</li>
+<li><strong>Testing Requirements:</strong> Minimal testing before patch deployment</li>
+<li><strong>Approval Process:</strong> Standard approval process</li>
+<li><strong>Rollback Plan:</strong> Rollback capability optional</li>
+</ul>
+<h2 id="maintenance-windows">Maintenance Windows</h2>
+<h3 id="tier-0-critical-services_3">Tier 0 - Critical Services</h3>
+<ul>
+<li><strong>Maintenance Windows:</strong> Minimal maintenance windows, emergency maintenance only</li>
+<li><strong>Notification:</strong> 48-hour advance notification for any maintenance</li>
+<li><strong>Approval:</strong> Executive approval required for maintenance</li>
+<li><strong>Testing:</strong> Comprehensive testing after maintenance</li>
+<li><strong>Monitoring:</strong> Enhanced monitoring during and after maintenance</li>
+</ul>
+<h3 id="tier-1-essential-services_3">Tier 1 - Essential Services</h3>
+<ul>
+<li><strong>Maintenance Windows:</strong> Scheduled maintenance windows during low-usage periods</li>
+<li><strong>Notification:</strong> 24-hour advance notification for maintenance</li>
+<li><strong>Approval:</strong> CAB approval required for maintenance</li>
+<li><strong>Testing:</strong> Standard testing after maintenance</li>
+<li><strong>Monitoring:</strong> Standard monitoring during and after maintenance</li>
+</ul>
+<h3 id="tier-2-important-services_3">Tier 2 - Important Services</h3>
+<ul>
+<li><strong>Maintenance Windows:</strong> Standard maintenance windows during business hours</li>
+<li><strong>Notification:</strong> 4-hour advance notification for maintenance</li>
+<li><strong>Approval:</strong> Technical team approval required for maintenance</li>
+<li><strong>Testing:</strong> Basic testing after maintenance</li>
+<li><strong>Monitoring:</strong> Basic monitoring during and after maintenance</li>
+</ul>
+<h3 id="tier-3-standard-services_3">Tier 3 - Standard Services</h3>
+<ul>
+<li><strong>Maintenance Windows:</strong> Flexible maintenance windows</li>
+<li><strong>Notification:</strong> 1-hour advance notification for maintenance</li>
+<li><strong>Approval:</strong> Standard approval process</li>
+<li><strong>Testing:</strong> Minimal testing after maintenance</li>
+<li><strong>Monitoring:</strong> Standard monitoring during and after maintenance</li>
+</ul>
+<h2 id="service-level-agreements-slas">Service Level Agreements (SLAs)</h2>
+<h3 id="availability-slas">Availability SLAs</h3>
+<ul>
+<li><strong>Tier 0:</strong> 99.99% availability (4.38 minutes downtime per month)</li>
+<li><strong>Tier 1:</strong> 99.9% availability (43.8 minutes downtime per month)</li>
+<li><strong>Tier 2:</strong> 99.5% availability (3.65 hours downtime per month)</li>
+<li><strong>Tier 3:</strong> 99.0% availability (7.3 hours downtime per month)</li>
+</ul>
+<h3 id="performance-slas">Performance SLAs</h3>
+<ul>
+<li><strong>Tier 0:</strong> Sub-second response time, 100% uptime during business hours</li>
+<li><strong>Tier 1:</strong> Sub-2-second response time, 99.9% uptime during business hours</li>
+<li><strong>Tier 2:</strong> Sub-5-second response time, 99.5% uptime during business hours</li>
+<li><strong>Tier 3:</strong> Sub-10-second response time, 99.0% uptime during business hours</li>
+</ul>
+<h3 id="support-slas">Support SLAs</h3>
+<ul>
+<li><strong>Tier 0:</strong> 24/7 dedicated support, 15-minute response time</li>
+<li><strong>Tier 1:</strong> Business hours with on-call support, 1-hour response time</li>
+<li><strong>Tier 2:</strong> Business hours support, 4-hour response time</li>
+<li><strong>Tier 3:</strong> Standard support, 24-hour response time</li>
+</ul>
+<h2 id="integration-with-backup-worksheet">Integration with Backup Worksheet</h2>
+<h3 id="backup-requirements-by-tier">Backup Requirements by Tier</h3>
+<ul>
+<li><strong>Tier 0:</strong> Continuous backup with immediate recovery capability</li>
+<li><strong>Tier 1:</strong> Hourly backup with rapid recovery capability</li>
+<li><strong>Tier 2:</strong> 4-hour backup with standard recovery capability</li>
+<li><strong>Tier 3:</strong> Daily backup with basic recovery capability</li>
+</ul>
+<h3 id="recovery-testing-requirements">Recovery Testing Requirements</h3>
+<ul>
+<li><strong>Tier 0:</strong> Monthly recovery testing with full validation</li>
+<li><strong>Tier 1:</strong> Quarterly recovery testing with validation</li>
+<li><strong>Tier 2:</strong> Semi-annual recovery testing with basic validation</li>
+<li><strong>Tier 3:</strong> Annual recovery testing with minimal validation</li>
+</ul>
+<h3 id="backup-validation">Backup Validation</h3>
+<ul>
+<li><strong>Tier 0:</strong> Comprehensive backup validation and integrity checking</li>
+<li><strong>Tier 1:</strong> Standard backup validation and integrity checking</li>
+<li><strong>Tier 2:</strong> Basic backup validation and integrity checking</li>
+<li><strong>Tier 3:</strong> Minimal backup validation and integrity checking</li>
+</ul>
+<h2 id="service-tiering-process">Service Tiering Process</h2>
+<h3 id="initial-classification">Initial Classification</h3>
+<ul>
+<li><strong>Business Impact Assessment:</strong> Assess business impact and criticality</li>
+<li><strong>Technical Requirements:</strong> Assess technical requirements and capabilities</li>
+<li><strong>Resource Requirements:</strong> Assess resource requirements and constraints</li>
+<li><strong>Classification Decision:</strong> Make classification decision based on assessment</li>
+<li><strong>Documentation:</strong> Document classification decision and rationale</li>
+</ul>
+<h3 id="tier-review-and-update">Tier Review and Update</h3>
+<ul>
+<li><strong>Annual Review:</strong> Conduct annual review of service classifications</li>
+<li><strong>Change Assessment:</strong> Assess changes in business impact or requirements</li>
+<li><strong>Reclassification:</strong> Reclassify services based on changes</li>
+<li><strong>Documentation:</strong> Update documentation and communicate changes</li>
+</ul>
+<h3 id="tier-management">Tier Management</h3>
+<ul>
+<li><strong>Monitoring:</strong> Monitor service performance against tier requirements</li>
+<li><strong>Reporting:</strong> Report service performance and compliance</li>
+<li><strong>Improvement:</strong> Identify and implement service improvements</li>
+<li><strong>Validation:</strong> Validate service tier compliance and effectiveness</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-integration">Gate Integration</h3>
+<ul>
+<li><strong>Gate 1:</strong> Service tier classification required in impact assessment</li>
+<li><strong>Gate 2:</strong> Technical designs must align with service tier requirements</li>
+<li><strong>Gate 4:</strong> Implementation must verify service tier compliance</li>
+<li><strong>Gate 5:</strong> Post-implementation verification must confirm service tier performance</li>
+</ul>
+<h3 id="risk-management">Risk Management</h3>
+<ul>
+<li><strong>Risk Assessment:</strong> Service tier requirements integrated into risk assessment</li>
+<li><strong>Risk Mitigation:</strong> Service tier controls integrated into risk mitigation</li>
+<li><strong>Risk Monitoring:</strong> Service tier compliance integrated into risk monitoring</li>
+<li><strong>Risk Reporting:</strong> Service tier status integrated into risk reporting</li>
+</ul>
+<h3 id="compliance-management">Compliance Management</h3>
+<ul>
+<li><strong>Compliance Validation:</strong> Service tier compliance validated through audit</li>
+<li><strong>Compliance Monitoring:</strong> Service tier compliance monitored continuously</li>
+<li><strong>Compliance Reporting:</strong> Service tier compliance reported to stakeholders</li>
+<li><strong>Compliance Improvement:</strong> Service tier compliance improved through lessons learned</li>
+</ul>
+</main>
+</body>
+</html>

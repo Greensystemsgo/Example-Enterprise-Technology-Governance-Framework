@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gate To Nist Cis Matrix</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="gate-to-nistcis-matrix">Gate to NIST/CIS Matrix</h1>
+<h2 id="nist-cybersecurity-framework-20-mapping">NIST Cybersecurity Framework 2.0 Mapping</h2>
+<h3 id="gate-0-business-need-intake">Gate 0 - Business Need Intake</h3>
+<table>
+<thead>
+<tr>
+<th>NIST CSF Function</th>
+<th>NIST CSF Category</th>
+<th>Gate 0 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Govern (GV)</strong></td>
+<td>GV.OC - Organizational Context</td>
+<td>Business justification, funding source, ownership acknowledgement</td>
+<td>Business context and requirements documented</td>
+</tr>
+<tr>
+<td><strong>Govern (GV)</strong></td>
+<td>GV.RM - Risk Management Strategy</td>
+<td>Data classification, accessibility/privacy assessment</td>
+<td>Risk management strategy aligned with business needs</td>
+</tr>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.AM - Asset Management</td>
+<td>Asset type declaration, ownership model</td>
+<td>Asset management requirements identified</td>
+</tr>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.BE - Business Environment</td>
+<td>Business justification, target timeline</td>
+<td>Business environment requirements documented</td>
+</tr>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.GV - Governance</td>
+<td>Ownership acknowledgement, data classification</td>
+<td>Governance requirements established</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-1-impact-ownership-confirmation">Gate 1 - Impact &amp; Ownership Confirmation</h3>
+<table>
+<thead>
+<tr>
+<th>NIST CSF Function</th>
+<th>NIST CSF Category</th>
+<th>Gate 1 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.AM - Asset Management</td>
+<td>Asset classification, asset type declaration, ownership matrix</td>
+<td>Asset management requirements confirmed</td>
+</tr>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.RA - Risk Assessment</td>
+<td>Data sensitivity statement, capacity estimate</td>
+<td>Risk assessment requirements established</td>
+</tr>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.SC - Supply Chain Risk Management</td>
+<td>Vendor onboarding preparation, cloud shared-responsibility mapping</td>
+<td>Supply chain risk management requirements established</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.AC - Identity Management and Access Control</td>
+<td>Ownership model selection, access control requirements</td>
+<td>Identity and access control requirements established</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.DS - Data Security</td>
+<td>Data classification, data handling requirements</td>
+<td>Data security requirements established</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-2-technical-security-review">Gate 2 - Technical &amp; Security Review</h3>
+<table>
+<thead>
+<tr>
+<th>NIST CSF Function</th>
+<th>NIST CSF Category</th>
+<th>Gate 2 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.AC - Identity Management and Access Control</td>
+<td>Architecture diagram, security controls checklist</td>
+<td>Identity and access control implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.DS - Data Security</td>
+<td>Data classification validation, encryption requirements</td>
+<td>Data security implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.IP - Information Protection Processes and Procedures</td>
+<td>Configuration standards, patching approach</td>
+<td>Information protection processes implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.MA - Maintenance</td>
+<td>Patching approach, maintenance procedures</td>
+<td>Maintenance procedures implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.PT - Protective Technology</td>
+<td>Security controls checklist, SIEM evidence</td>
+<td>Protective technology implementation</td>
+</tr>
+<tr>
+<td><strong>Detect (DE)</strong></td>
+<td>DE.AE - Anomalies and Events</td>
+<td>SIEM evidence, logging requirements</td>
+<td>Anomaly and event detection implementation</td>
+</tr>
+<tr>
+<td><strong>Detect (DE)</strong></td>
+<td>DE.CM - Security Continuous Monitoring</td>
+<td>Minimum logging profile, monitoring requirements</td>
+<td>Continuous monitoring implementation</td>
+</tr>
+<tr>
+<td><strong>Respond (RS)</strong></td>
+<td>RS.RP - Response Planning</td>
+<td>Risk scoring, incident response requirements</td>
+<td>Response planning implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-3-financial-procurement-approval">Gate 3 - Financial &amp; Procurement Approval</h3>
+<table>
+<thead>
+<tr>
+<th>NIST CSF Function</th>
+<th>NIST CSF Category</th>
+<th>Gate 3 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Govern (GV)</strong></td>
+<td>GV.RM - Risk Management Strategy</td>
+<td>Vendor due diligence, risk assessment</td>
+<td>Risk management strategy implementation</td>
+</tr>
+<tr>
+<td><strong>Identify (ID)</strong></td>
+<td>ID.SC - Supply Chain Risk Management</td>
+<td>Vendor due diligence checklist, SOC 2 attestation</td>
+<td>Supply chain risk management implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.IP - Information Protection Processes and Procedures</td>
+<td>Vendor security attestations, compliance documentation</td>
+<td>Information protection processes implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.DS - Data Security</td>
+<td>Data location disclosure, breach notification SLA</td>
+<td>Data security implementation</td>
+</tr>
+<tr>
+<td><strong>Respond (RS)</strong></td>
+<td>RS.CO - Communications</td>
+<td>Breach notification SLA, communication procedures</td>
+<td>Communications implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-4-implementation-readiness">Gate 4 - Implementation Readiness</h3>
+<table>
+<thead>
+<tr>
+<th>NIST CSF Function</th>
+<th>NIST CSF Category</th>
+<th>Gate 4 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.AC - Identity Management and Access Control</td>
+<td>Implementation checklist, access control validation</td>
+<td>Identity and access control implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.DS - Data Security</td>
+<td>Data security validation, encryption implementation</td>
+<td>Data security implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.IP - Information Protection Processes and Procedures</td>
+<td>Configuration validation, process implementation</td>
+<td>Information protection processes implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.MA - Maintenance</td>
+<td>Patch management, maintenance procedures</td>
+<td>Maintenance procedures implementation</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.PT - Protective Technology</td>
+<td>Security tooling baseline, SIEM integration</td>
+<td>Protective technology implementation</td>
+</tr>
+<tr>
+<td><strong>Detect (DE)</strong></td>
+<td>DE.AE - Anomalies and Events</td>
+<td>Logging profile verification, monitoring setup</td>
+<td>Anomaly and event detection implementation</td>
+</tr>
+<tr>
+<td><strong>Detect (DE)</strong></td>
+<td>DE.CM - Security Continuous Monitoring</td>
+<td>Monitoring validation, continuous monitoring setup</td>
+<td>Continuous monitoring implementation</td>
+</tr>
+<tr>
+<td><strong>Respond (RS)</strong></td>
+<td>RS.RP - Response Planning</td>
+<td>Incident response validation, response procedures</td>
+<td>Response planning implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-5-post-implementation-verification">Gate 5 - Post-Implementation Verification</h3>
+<table>
+<thead>
+<tr>
+<th>NIST CSF Function</th>
+<th>NIST CSF Category</th>
+<th>Gate 5 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.AC - Identity Management and Access Control</td>
+<td>Access control validation, identity management verification</td>
+<td>Identity and access control verification</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.DS - Data Security</td>
+<td>Data security verification, encryption validation</td>
+<td>Data security verification</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.IP - Information Protection Processes and Procedures</td>
+<td>Process verification, procedure validation</td>
+<td>Information protection processes verification</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.MA - Maintenance</td>
+<td>Maintenance verification, patch management validation</td>
+<td>Maintenance procedures verification</td>
+</tr>
+<tr>
+<td><strong>Protect (PR)</strong></td>
+<td>PR.PT - Protective Technology</td>
+<td>Security tooling verification, SIEM validation</td>
+<td>Protective technology verification</td>
+</tr>
+<tr>
+<td><strong>Detect (DE)</strong></td>
+<td>DE.AE - Anomalies and Events</td>
+<td>Logging verification, monitoring validation</td>
+<td>Anomaly and event detection verification</td>
+</tr>
+<tr>
+<td><strong>Detect (DE)</strong></td>
+<td>DE.CM - Security Continuous Monitoring</td>
+<td>Monitoring verification, continuous monitoring validation</td>
+<td>Continuous monitoring verification</td>
+</tr>
+<tr>
+<td><strong>Respond (RS)</strong></td>
+<td>RS.RP - Response Planning</td>
+<td>Incident response verification, response procedures validation</td>
+<td>Response planning verification</td>
+</tr>
+<tr>
+<td><strong>Recover (RC)</strong></td>
+<td>RC.RP - Recovery Planning</td>
+<td>Backup verification, recovery procedures validation</td>
+<td>Recovery planning verification</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cis-controls-v8-mapping">CIS Controls v8 Mapping</h2>
+<h3 id="gate-0-business-need-intake_1">Gate 0 - Business Need Intake</h3>
+<table>
+<thead>
+<tr>
+<th>CIS Control</th>
+<th>Control Description</th>
+<th>Gate 0 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIS Control 1</strong></td>
+<td>Inventory and Control of Enterprise Assets</td>
+<td>Asset type declaration, ownership model</td>
+<td>Asset inventory requirements established</td>
+</tr>
+<tr>
+<td><strong>CIS Control 2</strong></td>
+<td>Inventory and Control of Software Assets</td>
+<td>Software requirements, licensing considerations</td>
+<td>Software inventory requirements established</td>
+</tr>
+<tr>
+<td><strong>CIS Control 3</strong></td>
+<td>Data Protection</td>
+<td>Data classification, data handling requirements</td>
+<td>Data protection requirements established</td>
+</tr>
+<tr>
+<td><strong>CIS Control 4</strong></td>
+<td>Secure Configuration of Enterprise Assets and Software</td>
+<td>Configuration requirements, security baselines</td>
+<td>Secure configuration requirements established</td>
+</tr>
+<tr>
+<td><strong>CIS Control 5</strong></td>
+<td>Account Management</td>
+<td>Ownership acknowledgement, access requirements</td>
+<td>Account management requirements established</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-1-impact-ownership-confirmation_1">Gate 1 - Impact &amp; Ownership Confirmation</h3>
+<table>
+<thead>
+<tr>
+<th>CIS Control</th>
+<th>Control Description</th>
+<th>Gate 1 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIS Control 1</strong></td>
+<td>Inventory and Control of Enterprise Assets</td>
+<td>Asset classification, asset type declaration</td>
+<td>Asset inventory requirements confirmed</td>
+</tr>
+<tr>
+<td><strong>CIS Control 2</strong></td>
+<td>Inventory and Control of Software Assets</td>
+<td>Software requirements, licensing validation</td>
+<td>Software inventory requirements confirmed</td>
+</tr>
+<tr>
+<td><strong>CIS Control 3</strong></td>
+<td>Data Protection</td>
+<td>Data sensitivity statement, data handling requirements</td>
+<td>Data protection requirements confirmed</td>
+</tr>
+<tr>
+<td><strong>CIS Control 4</strong></td>
+<td>Secure Configuration of Enterprise Assets and Software</td>
+<td>Configuration requirements, security baselines</td>
+<td>Secure configuration requirements confirmed</td>
+</tr>
+<tr>
+<td><strong>CIS Control 5</strong></td>
+<td>Account Management</td>
+<td>Ownership model selection, access control requirements</td>
+<td>Account management requirements confirmed</td>
+</tr>
+<tr>
+<td><strong>CIS Control 6</strong></td>
+<td>Access Control Management</td>
+<td>Access control requirements, authorization procedures</td>
+<td>Access control management requirements confirmed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-2-technical-security-review_1">Gate 2 - Technical &amp; Security Review</h3>
+<table>
+<thead>
+<tr>
+<th>CIS Control</th>
+<th>Control Description</th>
+<th>Gate 2 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIS Control 4</strong></td>
+<td>Secure Configuration of Enterprise Assets and Software</td>
+<td>Configuration standards, security controls checklist</td>
+<td>Secure configuration implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 5</strong></td>
+<td>Account Management</td>
+<td>Account management requirements, access controls</td>
+<td>Account management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 6</strong></td>
+<td>Access Control Management</td>
+<td>Access control implementation, authorization procedures</td>
+<td>Access control management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 7</strong></td>
+<td>Continuous Vulnerability Management</td>
+<td>Vulnerability management, patch management</td>
+<td>Continuous vulnerability management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 8</strong></td>
+<td>Audit Log Management</td>
+<td>SIEM evidence, logging requirements</td>
+<td>Audit log management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 9</strong></td>
+<td>Email and Web Browser Protections</td>
+<td>Web browser protections, email security</td>
+<td>Email and web browser protections implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 10</strong></td>
+<td>Malware Defenses</td>
+<td>Malware protection, antivirus requirements</td>
+<td>Malware defenses implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 11</strong></td>
+<td>Data Recovery</td>
+<td>Backup requirements, recovery procedures</td>
+<td>Data recovery implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 12</strong></td>
+<td>Network Infrastructure Management</td>
+<td>Network security, firewall requirements</td>
+<td>Network infrastructure management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 13</strong></td>
+<td>Data Protection</td>
+<td>Data encryption, data handling procedures</td>
+<td>Data protection implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 14</strong></td>
+<td>Security Awareness and Skills Training</td>
+<td>Security training requirements, awareness programs</td>
+<td>Security awareness and skills training implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-3-financial-procurement-approval_1">Gate 3 - Financial &amp; Procurement Approval</h3>
+<table>
+<thead>
+<tr>
+<th>CIS Control</th>
+<th>Control Description</th>
+<th>Gate 3 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIS Control 15</strong></td>
+<td>Service Provider Management</td>
+<td>Vendor due diligence, vendor security attestations</td>
+<td>Service provider management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 16</strong></td>
+<td>Application Software Security</td>
+<td>Application security requirements, secure development</td>
+<td>Application software security implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 17</strong></td>
+<td>Incident Response Management</td>
+<td>Incident response procedures, breach notification</td>
+<td>Incident response management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 18</strong></td>
+<td>Penetration Testing</td>
+<td>Penetration testing requirements, security testing</td>
+<td>Penetration testing implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-4-implementation-readiness_1">Gate 4 - Implementation Readiness</h3>
+<table>
+<thead>
+<tr>
+<th>CIS Control</th>
+<th>Control Description</th>
+<th>Gate 4 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIS Control 4</strong></td>
+<td>Secure Configuration of Enterprise Assets and Software</td>
+<td>Configuration validation, security baselines</td>
+<td>Secure configuration implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 5</strong></td>
+<td>Account Management</td>
+<td>Account management validation, access controls</td>
+<td>Account management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 6</strong></td>
+<td>Access Control Management</td>
+<td>Access control validation, authorization procedures</td>
+<td>Access control management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 7</strong></td>
+<td>Continuous Vulnerability Management</td>
+<td>Vulnerability management validation, patch management</td>
+<td>Continuous vulnerability management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 8</strong></td>
+<td>Audit Log Management</td>
+<td>Logging profile verification, SIEM integration</td>
+<td>Audit log management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 9</strong></td>
+<td>Email and Web Browser Protections</td>
+<td>Web browser protections validation, email security</td>
+<td>Email and web browser protections implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 10</strong></td>
+<td>Malware Defenses</td>
+<td>Malware protection validation, antivirus requirements</td>
+<td>Malware defenses implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 11</strong></td>
+<td>Data Recovery</td>
+<td>Backup validation, recovery procedures</td>
+<td>Data recovery implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 12</strong></td>
+<td>Network Infrastructure Management</td>
+<td>Network security validation, firewall requirements</td>
+<td>Network infrastructure management implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 13</strong></td>
+<td>Data Protection</td>
+<td>Data encryption validation, data handling procedures</td>
+<td>Data protection implementation</td>
+</tr>
+<tr>
+<td><strong>CIS Control 14</strong></td>
+<td>Security Awareness and Skills Training</td>
+<td>Security training validation, awareness programs</td>
+<td>Security awareness and skills training implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-5-post-implementation-verification_1">Gate 5 - Post-Implementation Verification</h3>
+<table>
+<thead>
+<tr>
+<th>CIS Control</th>
+<th>Control Description</th>
+<th>Gate 5 Artifacts</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CIS Control 4</strong></td>
+<td>Secure Configuration of Enterprise Assets and Software</td>
+<td>Configuration verification, security baselines</td>
+<td>Secure configuration verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 5</strong></td>
+<td>Account Management</td>
+<td>Account management verification, access controls</td>
+<td>Account management verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 6</strong></td>
+<td>Access Control Management</td>
+<td>Access control verification, authorization procedures</td>
+<td>Access control management verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 7</strong></td>
+<td>Continuous Vulnerability Management</td>
+<td>Vulnerability management verification, patch management</td>
+<td>Continuous vulnerability management verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 8</strong></td>
+<td>Audit Log Management</td>
+<td>Logging verification, SIEM validation</td>
+<td>Audit log management verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 9</strong></td>
+<td>Email and Web Browser Protections</td>
+<td>Web browser protections verification, email security</td>
+<td>Email and web browser protections verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 10</strong></td>
+<td>Malware Defenses</td>
+<td>Malware protection verification, antivirus requirements</td>
+<td>Malware defenses verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 11</strong></td>
+<td>Data Recovery</td>
+<td>Backup verification, recovery procedures</td>
+<td>Data recovery verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 12</strong></td>
+<td>Network Infrastructure Management</td>
+<td>Network security verification, firewall requirements</td>
+<td>Network infrastructure management verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 13</strong></td>
+<td>Data Protection</td>
+<td>Data encryption verification, data handling procedures</td>
+<td>Data protection verification</td>
+</tr>
+<tr>
+<td><strong>CIS Control 14</strong></td>
+<td>Security Awareness and Skills Training</td>
+<td>Security training verification, awareness programs</td>
+<td>Security awareness and skills training verification</td>
+</tr>
+</tbody>
+</table>
+<h2 id="compliance-mapping-summary">Compliance Mapping Summary</h2>
+<h3 id="nist-csf-20-coverage">NIST CSF 2.0 Coverage</h3>
+<ul>
+<li><strong>Govern (GV):</strong> Organizational context, risk management strategy</li>
+<li><strong>Identify (ID):</strong> Asset management, business environment, governance, risk assessment, supply chain risk management</li>
+<li><strong>Protect (PR):</strong> Identity management, data security, information protection processes, maintenance, protective technology</li>
+<li><strong>Detect (DE):</strong> Anomalies and events, security continuous monitoring</li>
+<li><strong>Respond (RS):</strong> Response planning, communications</li>
+<li><strong>Recover (RC):</strong> Recovery planning</li>
+</ul>
+<h3 id="cis-controls-v8-coverage">CIS Controls v8 Coverage</h3>
+<ul>
+<li><strong>Basic Controls (1-6):</strong> Inventory, data protection, secure configuration, account management, access control</li>
+<li><strong>Foundational Controls (7-16):</strong> Vulnerability management, audit logging, email/web protections, malware defenses, data recovery, network infrastructure, data protection, security awareness, service provider management, application security, incident response, penetration testing</li>
+<li><strong>Organizational Controls (17-18):</strong> Incident response management, penetration testing</li>
+</ul>
+<h3 id="compliance-validation">Compliance Validation</h3>
+<ul>
+<li><strong>Gate Integration:</strong> All gates integrate with NIST CSF and CIS Controls</li>
+<li><strong>Artifact Alignment:</strong> Gate artifacts align with NIST CSF categories and CIS Controls</li>
+<li><strong>Implementation Validation:</strong> Implementation validates compliance with frameworks</li>
+<li><strong>Verification Requirements:</strong> Verification confirms compliance with frameworks</li>
+<li><strong>Audit Support:</strong> Framework mapping supports audit and compliance processes</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-process-integration">Gate Process Integration</h3>
+<ul>
+<li><strong>NIST CSF Integration:</strong> NIST CSF functions integrated into all gate processes</li>
+<li><strong>CIS Controls Integration:</strong> CIS Controls integrated into all gate processes</li>
+<li><strong>Compliance Validation:</strong> Compliance validation integrated into gate processes</li>
+<li><strong>Audit Support:</strong> Framework mapping supports audit and compliance processes</li>
+</ul>
+<h3 id="risk-management-integration">Risk Management Integration</h3>
+<ul>
+<li><strong>Risk Assessment:</strong> Framework mapping integrated into risk assessment</li>
+<li><strong>Risk Mitigation:</strong> Framework mapping integrated into risk mitigation</li>
+<li><strong>Risk Monitoring:</strong> Framework mapping integrated into risk monitoring</li>
+<li><strong>Risk Reporting:</strong> Framework mapping integrated into risk reporting</li>
+</ul>
+<h3 id="continuous-improvement-integration">Continuous Improvement Integration</h3>
+<ul>
+<li><strong>Framework Updates:</strong> Framework mapping updated with framework changes</li>
+<li><strong>Compliance Monitoring:</strong> Framework mapping supports compliance monitoring</li>
+<li><strong>Audit Preparation:</strong> Framework mapping supports audit preparation</li>
+<li><strong>Training and Awareness:</strong> Framework mapping supports training and awareness programs</li>
+</ul>
+</main>
+</body>
+</html>

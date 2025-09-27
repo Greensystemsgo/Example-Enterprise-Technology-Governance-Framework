@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Shared Responsibility Matrix</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="cloud-shared-responsibility-matrix">Cloud Shared Responsibility Matrix</h1>
+<h2 id="service-models-and-responsibility-matrix">Service Models and Responsibility Matrix</h2>
+<h3 id="software-as-a-service-saas">Software as a Service (SaaS)</h3>
+<table>
+<thead>
+<tr>
+<th>Control Category</th>
+<th>Customer Responsibility</th>
+<th>Provider Responsibility</th>
+<th>Shared Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity &amp; Access Management</strong></td>
+<td>User provisioning, access policies, authentication configuration</td>
+<td>Identity infrastructure, authentication services</td>
+<td>Access control policies, user management</td>
+</tr>
+<tr>
+<td><strong>Data Classification</strong></td>
+<td>Data classification, handling procedures, retention policies</td>
+<td>Data storage infrastructure, backup systems</td>
+<td>Data protection, encryption implementation</td>
+</tr>
+<tr>
+<td><strong>Logging &amp; Monitoring</strong></td>
+<td>Log analysis, alert configuration, incident response</td>
+<td>Log collection, storage, basic monitoring</td>
+<td>Log forwarding, monitoring integration</td>
+</tr>
+<tr>
+<td><strong>Backup &amp; Recovery</strong></td>
+<td>Backup policies, recovery procedures, testing</td>
+<td>Backup infrastructure, storage systems</td>
+<td>Backup configuration, recovery planning</td>
+</tr>
+<tr>
+<td><strong>Configuration Management</strong></td>
+<td>Application configuration, user settings</td>
+<td>Application infrastructure, platform services</td>
+<td>Configuration policies, change management</td>
+</tr>
+<tr>
+<td><strong>Legal &amp; Compliance</strong></td>
+<td>Compliance requirements, audit preparation</td>
+<td>Compliance infrastructure, audit support</td>
+<td>Compliance validation, audit coordination</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure-as-a-service-iaas">Infrastructure as a Service (IaaS)</h3>
+<table>
+<thead>
+<tr>
+<th>Control Category</th>
+<th>Customer Responsibility</th>
+<th>Provider Responsibility</th>
+<th>Shared Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity &amp; Access Management</strong></td>
+<td>User provisioning, access policies, authentication configuration</td>
+<td>Identity infrastructure, authentication services</td>
+<td>Access control policies, user management</td>
+</tr>
+<tr>
+<td><strong>Data Classification</strong></td>
+<td>Data classification, handling procedures, retention policies</td>
+<td>Physical infrastructure, data center security</td>
+<td>Data protection, encryption implementation</td>
+</tr>
+<tr>
+<td><strong>Logging &amp; Monitoring</strong></td>
+<td>Log analysis, alert configuration, incident response</td>
+<td>Physical infrastructure, basic monitoring</td>
+<td>Log forwarding, monitoring integration</td>
+</tr>
+<tr>
+<td><strong>Backup &amp; Recovery</strong></td>
+<td>Backup policies, recovery procedures, testing</td>
+<td>Physical infrastructure, storage systems</td>
+<td>Backup configuration, recovery planning</td>
+</tr>
+<tr>
+<td><strong>Configuration Management</strong></td>
+<td>OS configuration, application deployment, patch management</td>
+<td>Physical infrastructure, hypervisor management</td>
+<td>Configuration policies, change management</td>
+</tr>
+<tr>
+<td><strong>Legal &amp; Compliance</strong></td>
+<td>Compliance requirements, audit preparation</td>
+<td>Physical infrastructure, compliance support</td>
+<td>Compliance validation, audit coordination</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-as-a-service-paas">Platform as a Service (PaaS)</h3>
+<table>
+<thead>
+<tr>
+<th>Control Category</th>
+<th>Customer Responsibility</th>
+<th>Provider Responsibility</th>
+<th>Shared Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity &amp; Access Management</strong></td>
+<td>User provisioning, access policies, authentication configuration</td>
+<td>Identity infrastructure, authentication services</td>
+<td>Access control policies, user management</td>
+</tr>
+<tr>
+<td><strong>Data Classification</strong></td>
+<td>Data classification, handling procedures, retention policies</td>
+<td>Platform infrastructure, data services</td>
+<td>Data protection, encryption implementation</td>
+</tr>
+<tr>
+<td><strong>Logging &amp; Monitoring</strong></td>
+<td>Log analysis, alert configuration, incident response</td>
+<td>Platform infrastructure, basic monitoring</td>
+<td>Log forwarding, monitoring integration</td>
+</tr>
+<tr>
+<td><strong>Backup &amp; Recovery</strong></td>
+<td>Backup policies, recovery procedures, testing</td>
+<td>Platform infrastructure, storage systems</td>
+<td>Backup configuration, recovery planning</td>
+</tr>
+<tr>
+<td><strong>Configuration Management</strong></td>
+<td>Application configuration, deployment policies</td>
+<td>Platform infrastructure, runtime services</td>
+<td>Configuration policies, change management</td>
+</tr>
+<tr>
+<td><strong>Legal &amp; Compliance</strong></td>
+<td>Compliance requirements, audit preparation</td>
+<td>Platform infrastructure, compliance support</td>
+<td>Compliance validation, audit coordination</td>
+</tr>
+</tbody>
+</table>
+<h2 id="control-implementation-guidelines">Control Implementation Guidelines</h2>
+<h3 id="customer-responsibilities">Customer Responsibilities</h3>
+<h4 id="identity-access-management">Identity &amp; Access Management</h4>
+<ul>
+<li><strong>User Provisioning:</strong> Implement user provisioning and deprovisioning procedures</li>
+<li><strong>Access Policies:</strong> Define and implement access control policies</li>
+<li><strong>Authentication:</strong> Configure authentication methods and requirements</li>
+<li><strong>Authorization:</strong> Implement role-based access control and permissions</li>
+<li><strong>Monitoring:</strong> Monitor access patterns and detect anomalies</li>
+</ul>
+<h4 id="data-classification">Data Classification</h4>
+<ul>
+<li><strong>Data Classification:</strong> Classify data according to organizational standards</li>
+<li><strong>Handling Procedures:</strong> Implement data handling procedures and controls</li>
+<li><strong>Retention Policies:</strong> Define and implement data retention policies</li>
+<li><strong>Disposal Procedures:</strong> Implement secure data disposal procedures</li>
+<li><strong>Compliance:</strong> Ensure compliance with data protection regulations</li>
+</ul>
+<h4 id="logging-monitoring">Logging &amp; Monitoring</h4>
+<ul>
+<li><strong>Log Analysis:</strong> Analyze logs for security events and anomalies</li>
+<li><strong>Alert Configuration:</strong> Configure alerts for security events and incidents</li>
+<li><strong>Incident Response:</strong> Implement incident response procedures</li>
+<li><strong>Forensic Analysis:</strong> Conduct forensic analysis of security incidents</li>
+<li><strong>Reporting:</strong> Generate security reports and metrics</li>
+</ul>
+<h4 id="backup-recovery">Backup &amp; Recovery</h4>
+<ul>
+<li><strong>Backup Policies:</strong> Define backup policies and procedures</li>
+<li><strong>Recovery Procedures:</strong> Implement recovery procedures and testing</li>
+<li><strong>Testing:</strong> Conduct regular backup and recovery testing</li>
+<li><strong>Documentation:</strong> Maintain backup and recovery documentation</li>
+<li><strong>Validation:</strong> Validate backup integrity and recovery capabilities</li>
+</ul>
+<h4 id="configuration-management">Configuration Management</h4>
+<ul>
+<li><strong>Configuration Policies:</strong> Define configuration policies and standards</li>
+<li><strong>Change Management:</strong> Implement change management procedures</li>
+<li><strong>Patch Management:</strong> Implement patch management procedures</li>
+<li><strong>Compliance:</strong> Ensure configuration compliance with standards</li>
+<li><strong>Monitoring:</strong> Monitor configuration changes and compliance</li>
+</ul>
+<h4 id="legal-compliance">Legal &amp; Compliance</h4>
+<ul>
+<li><strong>Compliance Requirements:</strong> Identify and implement compliance requirements</li>
+<li><strong>Audit Preparation:</strong> Prepare for audits and compliance assessments</li>
+<li><strong>Documentation:</strong> Maintain compliance documentation and evidence</li>
+<li><strong>Training:</strong> Provide compliance training and awareness</li>
+<li><strong>Monitoring:</strong> Monitor compliance status and violations</li>
+</ul>
+<h3 id="provider-responsibilities">Provider Responsibilities</h3>
+<h4 id="infrastructure-security">Infrastructure Security</h4>
+<ul>
+<li><strong>Physical Security:</strong> Implement physical security controls and monitoring</li>
+<li><strong>Network Security:</strong> Implement network security controls and monitoring</li>
+<li><strong>System Security:</strong> Implement system security controls and monitoring</li>
+<li><strong>Data Center Security:</strong> Implement data center security controls and monitoring</li>
+<li><strong>Compliance:</strong> Maintain compliance with industry standards and regulations</li>
+</ul>
+<h4 id="service-availability">Service Availability</h4>
+<ul>
+<li><strong>Service Level Agreements:</strong> Maintain service level agreements and availability</li>
+<li><strong>Disaster Recovery:</strong> Implement disaster recovery and business continuity</li>
+<li><strong>Monitoring:</strong> Monitor service availability and performance</li>
+<li><strong>Incident Response:</strong> Implement incident response and recovery procedures</li>
+<li><strong>Communication:</strong> Provide service status and incident communication</li>
+</ul>
+<h4 id="data-protection">Data Protection</h4>
+<ul>
+<li><strong>Data Encryption:</strong> Implement data encryption in transit and at rest</li>
+<li><strong>Data Backup:</strong> Implement data backup and recovery systems</li>
+<li><strong>Data Retention:</strong> Implement data retention and disposal procedures</li>
+<li><strong>Data Privacy:</strong> Implement data privacy controls and procedures</li>
+<li><strong>Compliance:</strong> Maintain compliance with data protection regulations</li>
+</ul>
+<h3 id="shared-responsibilities">Shared Responsibilities</h3>
+<h4 id="security-monitoring">Security Monitoring</h4>
+<ul>
+<li><strong>Log Collection:</strong> Collect and forward security logs</li>
+<li><strong>Event Correlation:</strong> Correlate security events across systems</li>
+<li><strong>Incident Response:</strong> Coordinate incident response and recovery</li>
+<li><strong>Forensic Analysis:</strong> Conduct forensic analysis of security incidents</li>
+<li><strong>Reporting:</strong> Generate security reports and metrics</li>
+</ul>
+<h4 id="compliance-management">Compliance Management</h4>
+<ul>
+<li><strong>Compliance Validation:</strong> Validate compliance with requirements</li>
+<li><strong>Audit Coordination:</strong> Coordinate audits and compliance assessments</li>
+<li><strong>Documentation:</strong> Maintain compliance documentation and evidence</li>
+<li><strong>Training:</strong> Provide compliance training and awareness</li>
+<li><strong>Monitoring:</strong> Monitor compliance status and violations</li>
+</ul>
+<h4 id="change-management">Change Management</h4>
+<ul>
+<li><strong>Change Coordination:</strong> Coordinate changes across systems</li>
+<li><strong>Impact Assessment:</strong> Assess impact of changes on security and compliance</li>
+<li><strong>Testing:</strong> Test changes for security and compliance</li>
+<li><strong>Documentation:</strong> Document changes and their impact</li>
+<li><strong>Monitoring:</strong> Monitor changes and their effectiveness</li>
+</ul>
+<h2 id="implementation-checklist">Implementation Checklist</h2>
+<h3 id="pre-implementation">Pre-Implementation</h3>
+<ul>
+<li>[ ] Identify cloud service model and provider</li>
+<li>[ ] Map control categories to customer and provider responsibilities</li>
+<li>[ ] Define shared responsibility areas and coordination procedures</li>
+<li>[ ] Establish communication and escalation procedures</li>
+<li>[ ] Define monitoring and reporting requirements</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<ul>
+<li>[ ] Implement customer responsibilities and controls</li>
+<li>[ ] Validate provider responsibilities and controls</li>
+<li>[ ] Establish shared responsibility coordination procedures</li>
+<li>[ ] Implement monitoring and reporting systems</li>
+<li>[ ] Conduct initial security and compliance validation</li>
+</ul>
+<h3 id="post-implementation">Post-Implementation</h3>
+<ul>
+<li>[ ] Monitor control effectiveness and compliance</li>
+<li>[ ] Conduct regular security and compliance assessments</li>
+<li>[ ] Update responsibility matrix based on lessons learned</li>
+<li>[ ] Maintain documentation and evidence</li>
+<li>[ ] Provide training and awareness</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-integration">Gate Integration</h3>
+<ul>
+<li><strong>Gate 1:</strong> Cloud shared responsibility mapping required for cloud workloads</li>
+<li><strong>Gate 2:</strong> Technical designs must include shared responsibility validation</li>
+<li><strong>Gate 4:</strong> Implementation must verify shared responsibility controls</li>
+<li><strong>Gate 5:</strong> Post-implementation verification must confirm shared responsibility compliance</li>
+</ul>
+<h3 id="risk-management">Risk Management</h3>
+<ul>
+<li><strong>Risk Assessment:</strong> Shared responsibility matrix integrated into risk assessment</li>
+<li><strong>Risk Mitigation:</strong> Shared responsibility controls integrated into risk mitigation</li>
+<li><strong>Risk Monitoring:</strong> Shared responsibility compliance integrated into risk monitoring</li>
+<li><strong>Risk Reporting:</strong> Shared responsibility status integrated into risk reporting</li>
+</ul>
+<h3 id="compliance-management_1">Compliance Management</h3>
+<ul>
+<li><strong>Compliance Validation:</strong> Shared responsibility compliance validated through audit</li>
+<li><strong>Compliance Monitoring:</strong> Shared responsibility compliance monitored continuously</li>
+<li><strong>Compliance Reporting:</strong> Shared responsibility compliance reported to stakeholders</li>
+<li><strong>Compliance Improvement:</strong> Shared responsibility compliance improved through lessons learned</li>
+</ul>
+</main>
+</body>
+</html>

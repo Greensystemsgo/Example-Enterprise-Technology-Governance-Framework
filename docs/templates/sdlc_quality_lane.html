@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sdlc Quality Lane</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="sdlc-quality-lane">SDLC Quality Lane</h1>
+<h2 id="application-development-quality-checklist">Application Development Quality Checklist</h2>
+<h3 id="threat-modeling">Threat Modeling</h3>
+<ul>
+<li>[ ] <strong>Threat Model Created:</strong> Comprehensive threat model developed for the application</li>
+<li>[ ] <strong>Threat Identification:</strong> All potential threats identified and documented</li>
+<li>[ ] <strong>Attack Vectors:</strong> Attack vectors and attack paths documented</li>
+<li>[ ] <strong>Threat Prioritization:</strong> Threats prioritized based on likelihood and impact</li>
+<li>[ ] <strong>Mitigation Strategies:</strong> Mitigation strategies defined for identified threats</li>
+<li>[ ] <strong>Threat Model Review:</strong> Threat model reviewed and approved by security team</li>
+<li>[ ] <strong>Threat Model Updates:</strong> Threat model updated based on design changes</li>
+</ul>
+<h3 id="static-application-security-testing-sast">Static Application Security Testing (SAST)</h3>
+<ul>
+<li>[ ] <strong>SAST Tool Integration:</strong> SAST tool integrated into development pipeline</li>
+<li>[ ] <strong>Code Scanning:</strong> All code scanned for security vulnerabilities</li>
+<li>[ ] <strong>Vulnerability Detection:</strong> Security vulnerabilities detected and documented</li>
+<li>[ ] <strong>False Positive Analysis:</strong> False positives identified and documented</li>
+<li>[ ] <strong>Vulnerability Remediation:</strong> Security vulnerabilities remediated</li>
+<li>[ ] <strong>SAST Results Review:</strong> SAST results reviewed and approved by security team</li>
+<li>[ ] <strong>SAST Policy Compliance:</strong> SAST policy compliance validated</li>
+</ul>
+<h3 id="dynamic-application-security-testing-dast">Dynamic Application Security Testing (DAST)</h3>
+<ul>
+<li>[ ] <strong>DAST Tool Integration:</strong> DAST tool integrated into testing pipeline</li>
+<li>[ ] <strong>Application Scanning:</strong> Application scanned for runtime vulnerabilities</li>
+<li>[ ] <strong>Vulnerability Detection:</strong> Runtime vulnerabilities detected and documented</li>
+<li>[ ] <strong>False Positive Analysis:</strong> False positives identified and documented</li>
+<li>[ ] <strong>Vulnerability Remediation:</strong> Runtime vulnerabilities remediated</li>
+<li>[ ] <strong>DAST Results Review:</strong> DAST results reviewed and approved by security team</li>
+<li>[ ] <strong>DAST Policy Compliance:</strong> DAST policy compliance validated</li>
+</ul>
+<h3 id="secrets-handling">Secrets Handling</h3>
+<ul>
+<li>[ ] <strong>Secrets Identification:</strong> All secrets and sensitive data identified</li>
+<li>[ ] <strong>Secrets Management:</strong> Secrets managed through secure secret management system</li>
+<li>[ ] <strong>Secrets Storage:</strong> Secrets stored securely with appropriate encryption</li>
+<li>[ ] <strong>Secrets Access:</strong> Secrets access controlled and monitored</li>
+<li>[ ] <strong>Secrets Rotation:</strong> Secrets rotation policy implemented and followed</li>
+<li>[ ] <strong>Secrets Audit:</strong> Secrets usage audited and monitored</li>
+<li>[ ] <strong>Secrets Compliance:</strong> Secrets handling compliance validated</li>
+</ul>
+<h3 id="code-review">Code Review</h3>
+<ul>
+<li>[ ] <strong>Code Review Process:</strong> Code review process established and followed</li>
+<li>[ ] <strong>Security Review:</strong> Security-focused code review conducted</li>
+<li>[ ] <strong>Vulnerability Review:</strong> Code reviewed for security vulnerabilities</li>
+<li>[ ] <strong>Best Practices Review:</strong> Code reviewed for security best practices</li>
+<li>[ ] <strong>Review Documentation:</strong> Code review findings documented</li>
+<li>[ ] <strong>Review Approval:</strong> Code review approved by security team</li>
+<li>[ ] <strong>Review Compliance:</strong> Code review compliance validated</li>
+</ul>
+<h2 id="quality-gate-requirements">Quality Gate Requirements</h2>
+<h3 id="gate-2-technical-security-review">Gate 2 - Technical &amp; Security Review</h3>
+<ul>
+<li>[ ] <strong>Threat Model Approval:</strong> Threat model approved by security team</li>
+<li>[ ] <strong>SAST Results:</strong> SAST results reviewed and approved</li>
+<li>[ ] <strong>DAST Results:</strong> DAST results reviewed and approved</li>
+<li>[ ] <strong>Secrets Management:</strong> Secrets management validated</li>
+<li>[ ] <strong>Code Review:</strong> Code review completed and approved</li>
+<li>[ ] <strong>Security Controls:</strong> Security controls implemented and validated</li>
+<li>[ ] <strong>Vulnerability Remediation:</strong> All vulnerabilities remediated or accepted</li>
+</ul>
+<h3 id="gate-4-implementation-readiness">Gate 4 - Implementation Readiness</h3>
+<ul>
+<li>[ ] <strong>Final SAST Scan:</strong> Final SAST scan completed with no critical vulnerabilities</li>
+<li>[ ] <strong>Final DAST Scan:</strong> Final DAST scan completed with no critical vulnerabilities</li>
+<li>[ ] <strong>Secrets Validation:</strong> Secrets handling validated in production environment</li>
+<li>[ ] <strong>Code Review Final:</strong> Final code review completed and approved</li>
+<li>[ ] <strong>Security Testing:</strong> Security testing completed and validated</li>
+<li>[ ] <strong>Deployment Security:</strong> Deployment security validated</li>
+<li>[ ] <strong>Production Readiness:</strong> Production security readiness validated</li>
+</ul>
+<h2 id="security-testing-requirements">Security Testing Requirements</h2>
+<h3 id="unit-testing">Unit Testing</h3>
+<ul>
+<li>[ ] <strong>Security Unit Tests:</strong> Security-focused unit tests implemented</li>
+<li>[ ] <strong>Input Validation Tests:</strong> Input validation tests implemented</li>
+<li>[ ] <strong>Authentication Tests:</strong> Authentication tests implemented</li>
+<li>[ ] <strong>Authorization Tests:</strong> Authorization tests implemented</li>
+<li>[ ] <strong>Data Validation Tests:</strong> Data validation tests implemented</li>
+<li>[ ] <strong>Error Handling Tests:</strong> Error handling tests implemented</li>
+<li>[ ] <strong>Test Coverage:</strong> Security test coverage meets requirements</li>
+</ul>
+<h3 id="integration-testing">Integration Testing</h3>
+<ul>
+<li>[ ] <strong>Security Integration Tests:</strong> Security integration tests implemented</li>
+<li>[ ] <strong>API Security Tests:</strong> API security tests implemented</li>
+<li>[ ] <strong>Database Security Tests:</strong> Database security tests implemented</li>
+<li>[ ] <strong>Authentication Integration Tests:</strong> Authentication integration tests implemented</li>
+<li>[ ] <strong>Authorization Integration Tests:</strong> Authorization integration tests implemented</li>
+<li>[ ] <strong>Data Flow Tests:</strong> Data flow security tests implemented</li>
+<li>[ ] <strong>Integration Test Coverage:</strong> Security integration test coverage meets requirements</li>
+</ul>
+<h3 id="system-testing">System Testing</h3>
+<ul>
+<li>[ ] <strong>Security System Tests:</strong> Security system tests implemented</li>
+<li>[ ] <strong>End-to-End Security Tests:</strong> End-to-end security tests implemented</li>
+<li>[ ] <strong>Performance Security Tests:</strong> Performance security tests implemented</li>
+<li>[ ] <strong>Load Security Tests:</strong> Load security tests implemented</li>
+<li>[ ] <strong>Stress Security Tests:</strong> Stress security tests implemented</li>
+<li>[ ] <strong>System Test Coverage:</strong> Security system test coverage meets requirements</li>
+</ul>
+<h3 id="user-acceptance-testing">User Acceptance Testing</h3>
+<ul>
+<li>[ ] <strong>Security UAT:</strong> Security user acceptance tests implemented</li>
+<li>[ ] <strong>Business Security Tests:</strong> Business security tests implemented</li>
+<li>[ ] <strong>User Security Tests:</strong> User security tests implemented</li>
+<li>[ ] <strong>Accessibility Security Tests:</strong> Accessibility security tests implemented</li>
+<li>[ ] <strong>Usability Security Tests:</strong> Usability security tests implemented</li>
+<li>[ ] <strong>UAT Coverage:</strong> Security UAT coverage meets requirements</li>
+</ul>
+<h2 id="security-controls-validation">Security Controls Validation</h2>
+<h3 id="authentication-controls">Authentication Controls</h3>
+<ul>
+<li>[ ] <strong>Multi-Factor Authentication:</strong> MFA implemented and validated</li>
+<li>[ ] <strong>Password Policy:</strong> Password policy implemented and validated</li>
+<li>[ ] <strong>Account Lockout:</strong> Account lockout implemented and validated</li>
+<li>[ ] <strong>Session Management:</strong> Session management implemented and validated</li>
+<li>[ ] <strong>Authentication Logging:</strong> Authentication logging implemented and validated</li>
+<li>[ ] <strong>Authentication Monitoring:</strong> Authentication monitoring implemented and validated</li>
+</ul>
+<h3 id="authorization-controls">Authorization Controls</h3>
+<ul>
+<li>[ ] <strong>Role-Based Access Control:</strong> RBAC implemented and validated</li>
+<li>[ ] <strong>Least Privilege:</strong> Least privilege principle implemented and validated</li>
+<li>[ ] <strong>Access Control Lists:</strong> ACLs implemented and validated</li>
+<li>[ ] <strong>Permission Management:</strong> Permission management implemented and validated</li>
+<li>[ ] <strong>Authorization Logging:</strong> Authorization logging implemented and validated</li>
+<li>[ ] <strong>Authorization Monitoring:</strong> Authorization monitoring implemented and validated</li>
+</ul>
+<h3 id="data-protection-controls">Data Protection Controls</h3>
+<ul>
+<li>[ ] <strong>Data Encryption:</strong> Data encryption implemented and validated</li>
+<li>[ ] <strong>Data Classification:</strong> Data classification implemented and validated</li>
+<li>[ ] <strong>Data Loss Prevention:</strong> DLP implemented and validated</li>
+<li>[ ] <strong>Data Backup:</strong> Data backup implemented and validated</li>
+<li>[ ] <strong>Data Retention:</strong> Data retention implemented and validated</li>
+<li>[ ] <strong>Data Disposal:</strong> Data disposal implemented and validated</li>
+</ul>
+<h3 id="input-validation-controls">Input Validation Controls</h3>
+<ul>
+<li>[ ] <strong>Input Sanitization:</strong> Input sanitization implemented and validated</li>
+<li>[ ] <strong>Input Validation:</strong> Input validation implemented and validated</li>
+<li>[ ] <strong>Output Encoding:</strong> Output encoding implemented and validated</li>
+<li>[ ] <strong>SQL Injection Prevention:</strong> SQL injection prevention implemented and validated</li>
+<li>[ ] <strong>XSS Prevention:</strong> XSS prevention implemented and validated</li>
+<li>[ ] <strong>CSRF Prevention:</strong> CSRF prevention implemented and validated</li>
+</ul>
+<h2 id="compliance-and-audit-requirements">Compliance and Audit Requirements</h2>
+<h3 id="regulatory-compliance">Regulatory Compliance</h3>
+<ul>
+<li>[ ] <strong>Compliance Assessment:</strong> Compliance assessment completed</li>
+<li>[ ] <strong>Regulatory Requirements:</strong> Regulatory requirements identified and implemented</li>
+<li>[ ] <strong>Compliance Validation:</strong> Compliance validation completed</li>
+<li>[ ] <strong>Compliance Documentation:</strong> Compliance documentation completed</li>
+<li>[ ] <strong>Compliance Monitoring:</strong> Compliance monitoring implemented</li>
+<li>[ ] <strong>Compliance Reporting:</strong> Compliance reporting implemented</li>
+</ul>
+<h3 id="audit-readiness">Audit Readiness</h3>
+<ul>
+<li>[ ] <strong>Audit Trail:</strong> Audit trail implemented and validated</li>
+<li>[ ] <strong>Logging:</strong> Comprehensive logging implemented and validated</li>
+<li>[ ] <strong>Monitoring:</strong> Security monitoring implemented and validated</li>
+<li>[ ] <strong>Documentation:</strong> Security documentation completed and validated</li>
+<li>[ ] <strong>Evidence Collection:</strong> Evidence collection process implemented</li>
+<li>[ ] <strong>Audit Support:</strong> Audit support process implemented</li>
+</ul>
+<h3 id="policy-compliance">Policy Compliance</h3>
+<ul>
+<li>[ ] <strong>Security Policy Compliance:</strong> Security policy compliance validated</li>
+<li>[ ] <strong>Development Policy Compliance:</strong> Development policy compliance validated</li>
+<li>[ ] <strong>Data Policy Compliance:</strong> Data policy compliance validated</li>
+<li>[ ] <strong>Access Policy Compliance:</strong> Access policy compliance validated</li>
+<li>[ ] <strong>Incident Policy Compliance:</strong> Incident policy compliance validated</li>
+<li>[ ] <strong>Policy Documentation:</strong> Policy documentation completed and validated</li>
+</ul>
+<h2 id="integration-with-governance-framework">Integration with Governance Framework</h2>
+<h3 id="gate-2-integration">Gate 2 Integration</h3>
+<ul>
+<li><strong>Threat Modeling:</strong> Threat modeling integrated into technical and security review</li>
+<li><strong>SAST/DAST:</strong> SAST and DAST results integrated into security review</li>
+<li><strong>Secrets Management:</strong> Secrets management integrated into security review</li>
+<li><strong>Code Review:</strong> Code review integrated into security review</li>
+<li><strong>Security Controls:</strong> Security controls integrated into technical review</li>
+</ul>
+<h3 id="gate-4-integration">Gate 4 Integration</h3>
+<ul>
+<li><strong>Final Testing:</strong> Final security testing integrated into implementation readiness</li>
+<li><strong>Deployment Security:</strong> Deployment security integrated into implementation readiness</li>
+<li><strong>Production Readiness:</strong> Production security readiness integrated into implementation readiness</li>
+<li><strong>Security Validation:</strong> Security validation integrated into implementation readiness</li>
+<li><strong>Compliance Validation:</strong> Compliance validation integrated into implementation readiness</li>
+</ul>
+<h3 id="continuous-integration">Continuous Integration</h3>
+<ul>
+<li><strong>Automated Testing:</strong> Automated security testing integrated into CI/CD pipeline</li>
+<li><strong>Quality Gates:</strong> Quality gates integrated into CI/CD pipeline</li>
+<li><strong>Security Scanning:</strong> Security scanning integrated into CI/CD pipeline</li>
+<li><strong>Compliance Checking:</strong> Compliance checking integrated into CI/CD pipeline</li>
+<li><strong>Deployment Validation:</strong> Deployment validation integrated into CI/CD pipeline</li>
+</ul>
+<h3 id="risk-management-integration">Risk Management Integration</h3>
+<ul>
+<li><strong>Risk Assessment:</strong> Security risks assessed and managed throughout SDLC</li>
+<li><strong>Risk Mitigation:</strong> Security risks mitigated through quality controls</li>
+<li><strong>Risk Monitoring:</strong> Security risks monitored throughout SDLC</li>
+<li><strong>Risk Reporting:</strong> Security risks reported to stakeholders</li>
+<li><strong>Risk Improvement:</strong> Security risks improved through lessons learned</li>
+</ul>
+</main>
+</body>
+</html>
