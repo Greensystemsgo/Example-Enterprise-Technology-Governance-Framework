@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Framework Overview</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    padding: 0 1.5rem 4rem;
+}
+nav.site-nav {
+    margin-bottom: 2rem;
+}
+nav.site-nav a {
+    color: #17479e;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+    text-decoration: underline;
+}
+main.content h1,
+main.content h2,
+main.content h3 {
+    line-height: 1.3;
+}
+pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow: auto;
+}
+code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+a {
+    color: #17479e;
+}
+ul.page-list {
+    list-style: none;
+    padding-left: 0;
+}
+ul.page-list li {
+    margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="index.html">&larr; Back to index</a></nav>
+<main class="content">
+<h1 id="enterprise-technology-governance-overview">﻿Enterprise Technology Governance Overview</h1>
+<h2 id="1-purpose-and-scope">1. Purpose and Scope</h2>
+<p>This overview captures recommended best practices for coordinating technology work in alignment with the Mayor's <a href="https://d3n8a8pro7vhmx.cloudfront.net/mayorofla/pages/17070/attachments/original/1426620047/ED2_with_signature_and_letterhead.pdf">Executive Directive No. 2 on cybersecurity</a>. A signed copy is stored in <code>executive_directive_2/executive_directive_2_signed_letterhead.pdf</code>. It defines standard approval gates and collaboration touchpoints every technology request should satisfy before funds are committed or enterprise assets are changed. It applies to all departments, business units, contractors, and vendors that interact with the City's technology environment. This document is guidance, not a formal policy, and nothing here should be viewed as new; it reflects long-standing industry standards (TSA, CIS, NIST) and City directives that everyone is expected to understand and follow.</p>
+<h2 id="2-guiding-principles">2. Guiding Principles</h2>
+<ul>
+<li>Ownership is defined and documented for the full lifecycle of every asset, service, or process.</li>
+<li>No work proceeds without passing the prescribed gates; approvals are secured prior to purchase orders, provisioning, or deployment.</li>
+<li>Documentation and audit trails are mandatory. If it is not recorded, it is not considered complete.</li>
+<li>All requests, approvals, artifacts, and communications are captured in the centralized request solution. Ad-hoc channels (chat, email, hallway conversations) do not meet compliance requirements.</li>
+<li>Collaboration across core teams (Infrastructure, Active Directory, Service Desk, Network, Security) is the default operating model.</li>
+<li>Practices align with the City's cybersecurity mandates, including the Mayor's <a href="https://d3n8a8pro7vhmx.cloudfront.net/mayorofla/pages/17070/attachments/original/1426620047/ED2_with_signature_and_letterhead.pdf">Executive Directive No. 2 on cybersecurity</a>.</li>
+<li>Audit expectations mirror TSA, CIS, and NIST guidance: controls must be reviewable, repeatable, and evidenced through the centralized request process.</li>
+</ul>
+<h2 id="3-governance-bodies-and-roles">3. Governance Bodies and Roles</h2>
+<ul>
+<li>Business Requestor: Initiates requests, provides business justification, funding source, and confirms operational ownership.</li>
+<li>Service Desk (<a href="teams/service_desk_overview.html">Service Desk Overview</a>): Operates the intake queue, validates completeness, and logs requests in the official system of record. The Service Desk manages the workstation fleet lifecycle by default; its involvement in server workflows is coordinated with Infrastructure and the owning team based on organizational policy.</li>
+<li>Infrastructure Team (<a href="teams/infrastructure_overview.html">Infrastructure Overview</a>): Reviews hosting, compute, storage, backup, and platform requirements; leads provisioning after all gates clear. Server ownership defaults to Infrastructure unless the requesting team formally accepts lifecycle responsibilities during Gate 1.</li>
+<li>Active Directory (AD) Team (<a href="teams/active_directory_overview.html">Active Directory Overview</a>): Manages domain joins, account provisioning, and directory policy enforcement.</li>
+<li>Network Team (<a href="teams/network_overview.html">Network Overview</a>): Ensures segmentation, addressing, firewall, and connectivity compliance.</li>
+<li>Security Team (including SOC) (<a href="teams/security_overview.html">Security Overview</a>): Performs risk assessment, validates alignment with security baselines, identifies process gaps (e.g., vulnerability management, logging coverage), maintains the exception program, and may isolate or take assets offline to investigate anomalies.</li>
+<li>Governance Council (cross-team): Reviews escalated or high-risk items, resolves disputes, and signs off on exceptions.</li>
+</ul>
+<h2 id="4-standard-request-lifecycle-and-gates">4. Standard Request Lifecycle and Gates</h2>
+<p>Every technology request progresses through the following stages. Gate artifacts are stored with the request record and may not be bypassed. Use the quick-reference summary in <a href="./gates_quick_reference.html">Gates Quick Reference</a> for a one-page view of gate expectations. Gate templates are organized in <code>templates/gates/</code>, with supporting team worksheets in the team-specific subfolders.</p>
+<ul>
+<li>Gate 0 - Business Need Intake</li>
+<li>Required artifacts: intake form, business justification, funding source, target timeline, ownership acknowledgement.</li>
+<li>
+<p>Service Desk confirms completeness and assigns tracking ID in the centralized request solution. Informal channels do not satisfy intake requirements.</p>
+</li>
+<li>
+<p>Gate 1 - Impact &amp; Ownership Confirmation</p>
+</li>
+<li>Infrastructure, AD, Network, and Security teams receive the request simultaneously.</li>
+<li>Required artifacts: ownership matrix, asset classification, asset type declaration (workstation, server, other), data sensitivity statement, support runway plan, capacity estimate, ownership model selection (Infrastructure-managed or Requestor-managed).</li>
+<li>All requests to create, modify, disable, or delete directory objects must be routed through the centralized request process so lifecycle actions remain auditable.</li>
+<li>
+<p>Owners confirm they can accept responsibilities; otherwise the request is paused until gaps are resolved.</p>
+</li>
+<li>
+<p>Gate 2 - Technical &amp; Security Review</p>
+</li>
+<li>Infrastructure validates hosting strategy; Network confirms network design; Security issues the risk assessment.</li>
+<li>Required artifacts: architecture diagram, configuration standards checklist, patching approach, security controls checklist, exception log (if applicable).</li>
+<li>Security highlights risk gaps identified through vulnerability management or other monitoring efforts; teams must either remediate or file a formal exception.</li>
+<li>
+<p>Outputs: go/no-go decision, remediation tasks, or escalation to the Governance Council.</p>
+</li>
+<li>
+<p>Gate 3 - Financial &amp; Procurement Approval</p>
+</li>
+<li>Purchasing authority verifies vendor compliance, warranty terms, maintenance coverage, and budget alignment.</li>
+<li>
+<p>Required artifacts: bill of materials, quotes, vendor security attestations, funding authorization signature.</p>
+</li>
+<li>
+<p>Gate 4 - Implementation Readiness</p>
+</li>
+<li>All teams confirm prerequisites are satisfied prior to implementation: naming conventions, asset tags, image approval, change window, rollback plan.</li>
+<li>
+<p>Required artifacts: implementation checklist, test results summary, change record, communication plan, confirmation that mandatory security tooling baselines are deployed and logging feeds are configured to the central SIEM.</p>
+</li>
+<li>
+<p>Gate 5 - Post-Implementation Verification</p>
+</li>
+<li>Requestor and core teams complete verification, store documentation, and confirm operational ownership.</li>
+<li>Required artifacts: validation report, monitoring handoff, updated CMDB/asset registry entry, training materials (if applicable), confirmation that ongoing logging continues to the SIEM.</li>
+</ul>
+<h2 id="5-ownership-expectations">5. Ownership Expectations</h2>
+<p>The ownership matrix is the authoritative record of who is responsible for every asset, configuration item, and supporting process introduced by a request. It is created during Gate 0 and validated at Gate 1; requests without a complete matrix do not advance. The matrix stays attached to the request so auditors and responders can see exactly who owns day-to-day operations versus escalation and compliance tasks.</p>
+<p>Minimum columns for the ownership matrix:</p>
+<ul>
+<li>Asset/Service Name</li>
+<li>Primary Owner (name, team, contact)</li>
+<li>Backup Owner (name, team, contact)</li>
+<li>Support Model (Infrastructure-managed or Requestor-managed)</li>
+<li>Core Responsibilities (patch cadence, monitoring, backups, DR, documentation)</li>
+<li>Escalation Path (24x7 on-call rotation or contractual contact)</li>
+<li>Runbook/Artifact Links (procedures, diagrams, CMDB entries)</li>
+</ul>
+<p>Example ownership matrix entry:</p>
+<table>
+<thead>
+<tr>
+<th>Asset/Service</th>
+<th>Primary Owner</th>
+<th>Backup Owner</th>
+<th>Support Model</th>
+<th>Core Responsibilities</th>
+<th>Escalation Path</th>
+<th>Runbook Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HR Records Platform</td>
+<td>Jane Smith (HRIS)</td>
+<td>Infrastructure Duty Manager</td>
+<td>Infrastructure-managed</td>
+<td>Quarterly patching, nightly backups, SIEM log review</td>
+<td>Infrastructure On-Call (213-555-0100)</td>
+<td><code>\\city\runbooks\hris\operations.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>Usage expectations:</p>
+<ul>
+<li>Workstations default to the Service Desk support model (see <a href="teams/service_desk_overview.html">Service Desk Overview</a>); servers default to the Infrastructure-managed model unless the requesting team formally accepts lifecycle ownership (<a href="teams/infrastructure_overview.html">Infrastructure Overview</a>).</li>
+<li>Directory-integrated services must document their AD dependencies and matrix ownership in collaboration with the <a href="teams/active_directory_overview.html">Active Directory Overview</a> practices.</li>
+<li>Network connectivity, segmentation, and firewall stewardship must align with the responsibilities documented in the <a href="teams/network_overview.html">Network Overview</a>.</li>
+<li>Security obligations (patching SLAs, logging, exception handling, incident response escalation) are documented in the matrix consistent with the <a href="teams/security_overview.html">Security Overview</a>.</li>
+<li>Requestors selecting the Requestor-managed model must document how they will fulfill Infrastructure and Security baseline tasks, including tooling requirements and evidence collection for audits.</li>
+<li>The matrix is reviewed at each gate to verify ownership remains accurate; changes after Gate 5 must be logged through the centralized request system so the matrix stays current.</li>
+</ul>
+<h2 id="6-documentation-audit-and-lifecycle-reviews">6. Documentation, Audit, and Lifecycle Reviews</h2>
+<ul>
+<li>Gate artifacts, approvals, and communications are stored in the centralized request system with version control and retention per records policy.</li>
+<li>Audit evidence must demonstrate alignment with TSA, CIS, and NIST expectations, including periodic lifecycle reviews of Active Directory objects and associated access.</li>
+<li>Directory object lifecycle reviews validate join requests, disablements, deletions, and permission changes. All actions are initiated through the centralized request process to preserve traceability.</li>
+<li>Security maintains a formal exception process. Requests that cannot meet baseline requirements, including logging obligations, use this process to document compensating controls, expiration dates, and risk acceptance.</li>
+</ul>
+<h2 id="7-cross-team-standards">7. Cross-Team Standards</h2>
+<ul>
+<li>Naming conventions for servers, workstations, network devices, and service accounts are published jointly and applied before Gate 4 approval.</li>
+<li>New hosts must deploy the mandatory security tooling stack, satisfy baseline hardening requirements, and forward logs to the central SIEM unless a documented security exception is approved.</li>
+<li>All technology assets?servers, workstations, network devices, appliances, applications, or specialty systems?must send security-relevant logs to the central SIEM.</li>
+<li>Asset inventory is updated at Gate 5; no asset operates in production without an assigned owner, maintenance plan, and lifecycle end date.</li>
+<li>Emergency changes follow the same gates retroactively within two business days and require Governance Council review.</li>
+<li>When team process requirements conflict, the stricter control prevails unless an exception is granted in writing by the Governance Council.</li>
+</ul>
+<h2 id="8-continuous-improvement">8. Continuous Improvement</h2>
+<ul>
+<li>Core teams meet monthly to review failed gates, escalations, and audit findings.</li>
+<li>Lessons learned update standards, templates, and training materials for requestors.</li>
+<li>Matured processes are documented as playbooks and shared to reduce rework and accelerate compliant delivery.</li>
+<li>Security shares vulnerability management trends, SOC findings, and exception metrics so teams address root causes, not just individual incidents.</li>
+</ul>
+</main>
+</body>
+</html>
